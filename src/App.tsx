@@ -1,4 +1,3 @@
-import Padthai from './assets/pad-thai.jpg';
 function App() {
   return (
     <>
