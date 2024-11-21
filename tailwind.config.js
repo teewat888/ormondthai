@@ -1,6 +1,15 @@
 /** @type {import('tailwindcss').Config} */
-export const content = ['./src/**/*.{html,js}'];
-export const theme = {
-  extend: {},
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        gold: '#D4AF37', // Add gold color
+      },
+      fontFamily: {
+        caramel: ['Caramel', 'cursive'], // Add the Caramel font
+      },
+    },
+  },
+  plugins: [],
 };
-export const plugins = [];
