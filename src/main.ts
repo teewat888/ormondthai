@@ -1,8 +1,9 @@
+import { foodGallery } from './data/foodGallery';
 import './style.css';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <!-- Hero Section -->
-  <section class="h-screen bg-gradient-to-r from-black via-gray-900 to-black text-white flex flex-col justify-center items-center">
+    <!-- Hero Section -->
+  <section id="hero" class="h-screen bg-gradient-to-r from-black via-gray-900 to-black text-white flex flex-col justify-center items-center">
     <!-- Logo -->
     <div class="flex flex-col items-center text-center">
       <img src="/logo.png" alt="Phaya Thai Logo" class="h-40 w-auto mb-6" />
@@ -31,6 +32,17 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     </div>
   </section>
 
+  <!-- Navigation -->
+  <nav id="navigation" class="sticky top-0 bg-black text-white py-4 shadow-lg z-50">
+    <div class="container mx-auto flex justify-center space-x-8">
+      <a href="#hero" class="hover:text-gold transition menu-link">Home</a>
+      <a href="#about" class="hover:text-gold transition menu-link">About Us</a>
+      <a href="#gallery" class="hover:text-gold transition menu-link">Gallery</a>
+      <!-- a href="#foodmenu" class="hover:text-gold transition menu-link">Menu</a -->
+      <a href="#contact" class="hover:text-gold transition menu-link">Contact Us</a>
+    </div>
+  </nav>
+
   <!-- About Us Section -->
   <section id="about" class="py-20 bg-gray-900 text-gray-200">
     <div class="container mx-auto px-4">
@@ -47,20 +59,153 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     </div>
   </section>
 
+  <!-- Food Gallery Section -->
+  <section id="gallery" class="py-20 bg-gray-900 text-gray-200">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-gold text-center mb-12">Gallery</h2>
+    <div id="food-gallery" class="relative">
+      <!-- Initial layout will be dynamically inserted here -->
+    </div>
+       
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-900 text-gray-200 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold text-gold mb-8">Contact Us</h2>
+      <p class="text-lg">Shop 6/96 Canterbury Road, Blackburn South VIC</p>
+      <p class="text-lg">Phone: (03) 98943819</p>
+      <p class="text-lg">Mobile: 0412289289</p>
+      <p class="text-lg">Email: info@phayathai.com.au</p>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="bg-black text-gray-400 py-4 text-center">
     <p>&copy; <span id="current-year"></span> Phaya Thai Restaurant. All rights reserved.</p>
   </footer>
 `;
 
-// JavaScript to Smooth Scroll to "About Us"
-document.querySelector('a[href="#about"]')?.addEventListener('click', (e) => {
-  e.preventDefault();
-  const aboutSection = document.getElementById('about');
-  aboutSection?.scrollIntoView({ behavior: 'smooth' });
+// JavaScript for Smooth Scrolling and Current Year
+const menuLinks = document.querySelectorAll('.menu-link');
+const currentYearElement = document.getElementById('current-year');
+
+// Smooth scrolling for menu links
+menuLinks.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const targetId = link.getAttribute('href')!.substring(1);
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
 });
 
-const currentYearElement = document.getElementById('current-year');
+const layouts = [
+  (data: typeof foodGallery) => `
+    <div class="grid grid-cols-2 gap-4">
+      ${data
+        .map(
+          (item) => `
+        <div class="overflow-hidden rounded-lg shadow-lg">
+          <img src="${item.image}" alt="${item.alt}" class="w-full h-40 object-cover" />
+        </div>
+      `
+        )
+        .join('')}
+    </div>
+  `,
+  (data: typeof foodGallery) => `
+    <div class="grid grid-cols-3 gap-4">
+      ${data
+        .map(
+          (item) => `
+        <div class="overflow-hidden rounded-lg shadow-lg">
+          <img src="${item.image}" alt="${item.alt}" class="w-full h-56 object-cover" />
+        </div>
+      `
+        )
+        .join('')}
+    </div>
+  `,
+];
+
+let currentLayoutIndex = 0;
+const shuffleArray = (array: typeof foodGallery) => {
+  return array.sort(() => Math.random() - 0.5);
+};
+const renderGallery = (layoutIndex: number) => {
+  const foodGalleryContainer = document.getElementById('food-gallery');
+  if (!foodGalleryContainer) return;
+
+  const shuffledData = shuffleArray([...foodGallery]);
+  // Add fade-out effect
+  foodGalleryContainer.classList.add('fade-out');
+
+  setTimeout(() => {
+    // Change the layout after fade-out
+    foodGalleryContainer.innerHTML = layouts[layoutIndex](shuffledData);
+
+    // Add fade-in effect
+    foodGalleryContainer.classList.remove('fade-out');
+    foodGalleryContainer.classList.add('fade-in');
+
+    // Remove fade-in class after animation
+    setTimeout(() => {
+      foodGalleryContainer.classList.remove('fade-in');
+    }, 1000); // Match fade-in animation duration
+  }, 1000); // Match fade-out animation duration
+};
+
+// Automatically switch layouts every 5 seconds
+setInterval(() => {
+  currentLayoutIndex = (currentLayoutIndex + 1) % layouts.length;
+  renderGallery(currentLayoutIndex);
+}, 5000);
+
+// Render the initial layout
+renderGallery(currentLayoutIndex);
+
+// food gallery section
+// <div class="overflow-hidden rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+//   <img src="${item.image}" alt="${item.alt}" class="w-full h-56 object-cover" />
+//   <div class="p-4 bg-gray-800">
+//     <h3 class="text-lg font-bold text-gold">${item.title}</h3>
+//   </div>
+// </div>
+
+// <!-- Food Menu Section -->
+// <section id="foodmenu" class="py-20 bg-gray-900 text-gray-300">
+//   <div class="container mx-auto">
+//     <h2 class="text-4xl font-bold text-gold text-center mb-12">Our Menu</h2>
+//     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+//       <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+//         <h3 class="text-2xl font-bold mb-4 text-gold">Starters</h3>
+//         <div class="flex justify-between border-b border-gray-700 py-2">
+//           <div>
+//             <strong>Spring Rolls</strong>
+//             <p class="text-gray-400">Crispy rolls filled with vegetables.</p>
+//           </div>
+//           <span class="font-bold text-gold">$10</span>
+//         </div>
+//          <div class="flex justify-between border-b border-gray-700 py-2">
+//           <div>
+//             <strong>Spring Rolls</strong>
+//             <p class="text-gray-400">Crispy rolls filled with vegetables.</p>
+//           </div>
+//           <span class="font-bold text-gold">$10</span>
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+// </section>
+
+// Update footer with the current year
 if (currentYearElement) {
   currentYearElement.textContent = new Date().getFullYear().toString();
 }
