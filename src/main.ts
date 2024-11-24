@@ -11,6 +11,19 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         Phaya Thai Restaurant
       </h1>
     </div>
+     <!-- Contact Details -->
+  <div class="mt-8 text-center">
+    <p class="text-lg text-gray-300">
+      <span class="font-bold text-gold">Shop:</span> 6/96 Canterbury Road, Blackburn South VIC
+    </p>
+    <p class="text-lg text-gray-300">
+      <span class="font-bold text-gold">Phone:</span> (03) 9894 3819 &nbsp; | &nbsp; 
+      <span class="font-bold text-gold">Mobile:</span> 0412 289 289
+    </p>
+    <p class="text-lg text-gray-300">
+      <span class="font-bold text-gold">Email:</span> info@phayathai.com.au
+    </p>
+  </div>
     <!-- Scroll Down Indicator -->
     <div class="mt-12 animate-bounce">
       <a href="#about">
