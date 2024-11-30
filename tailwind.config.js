@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        gold: '#D4AF37', // Add gold color,
+        gold: '#D4AF37', // Gold color
+        beige: '#F7E7CE', // Add beige color
         dark: '#111827', // Custom dark background
       },
       fontFamily: {
