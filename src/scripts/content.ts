@@ -5,7 +5,7 @@ export const renderAboutUs = () => {
   if (aboutSection) {
     aboutSection.innerHTML = `
     <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold text-gold text-center mb-8">${
+      <h2 class="text-4xl font-bold text-gold text-center mb-8 font-greatvibes">${
         aboutUsData.title
       }</h2>
       <div class="text-lg leading-relaxed text-justify max-w-3xl mx-auto text-gray-300">

@@ -65,7 +65,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <!-- Food Gallery Section -->
 <!-- section id="gallery" class="py-20 bg-gray-900 text-gray-200">
   <div class="container mx-auto px-4">
-    <h2 class="text-4xl font-bold text-gold text-center mb-12">Gallery</h2>
+    <h2 class="text-4xl font-bold text-gold text-center mb-12 font-greatvibes">Gallery</h2>
   <div id="food-gallery" class="relative">
     <!-- Initial layout will be dynamically inserted here -->
   </div>
@@ -76,7 +76,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 <!-- section id="foodmenu" class="py-20 bg-gray-900 text-gray-300">
   <div class="container mx-auto">
-    <h2 class="text-4xl font-bold text-gold text-center mb-12">Our Menu</h2>
+    <h2 class="text-4xl font-bold text-gold text-center mb-12 font-greatvibes">Our Menu</h2>
     <div id="food-menu" class="mx-4 md:mx-auto"></div>
   </div>
 </section -->
@@ -85,7 +85,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <!-- Contact Section -->
 <section id="contact" class="py-20 bg-gray-900 text-gray-200 text-center">
   <div class="container mx-auto">
-    <h2 class="text-4xl font-bold text-gold mb-8">Contact Us</h2>
+    <h2 class="text-4xl font-bold text-gold mb-8 font-greatvibes">Contact Us</h2>
     <p class="text-lg">Shop 6/96 Canterbury Road, Blackburn South VIC</p>
     <p class="text-lg">Phone: (03) 98943819</p>
     <p class="text-lg">Mobile: 0412289289</p>
