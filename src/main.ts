@@ -1,3 +1,4 @@
+import { aboutUsData } from './data/about-us';
 import { foodGallery } from './data/foodGallery';
 import './style.css';
 
@@ -58,18 +59,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
   <!-- About Us Section -->
   <section id="about" class="py-20 bg-gray-900 text-gray-200">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold text-gold text-center mb-8">About Us</h2>
-      <p class="text-lg leading-relaxed text-justify max-w-3xl mx-auto text-gray-300">
-        Thai food is renowned around the world for its distinctive flavours and nutritional value. Thai food is one of the world’s most popular cuisines. Not only is it delicious, it is also very healthy. Thai herbs, rich in vitamins and minerals, provide a unique balance of flavours and nutritional value, making Thai food a great choice for those seeking both taste and wellbeing. Creating truly excellent Thai food is an art that requires skill, care and love for the craft. Every dish tells a story of meticulous preparation using fresh, high-quality ingredients that are carefully selected to achieve the perfect balance of flavours. 
-        <br/><br/>
-        Cooking has always been a passion of mine. I started learning at the age of nine when my mother first taught me the art of Thai cooking. This early experience allowed me to hone my skills, which eventually led to the opening of my first restaurant, Baiyoke Thai restaurant in Elsternwick. I then moved on to open Ruby Modern Thai at Rye in 2010, where I continued to develop my culinary skills. Now, with over 20 years of experience, I am excited to present my latest venture, Phaya Thai restaurant. 
-        <br/><br/>
-        I invite you to experience the flavours of Thai food prepared with passion and attention to detail. At Phaya Thai restaurant, we focus not only on taste, but also on cleanliness and quality. To ensure that every dish is safe and delicious, all vegetables are thoroughly washed to ensure the highest safety standards. I am honored to have the opportunity to cook healthy and delicious food for you and your family.
-        <br/><br/>
-        Thank you for trusting me to bring the essence of Thai food to you.
-      </p>
-    </div>
+   
   </section>
 
   <!-- Food Gallery Section -->
@@ -222,5 +212,25 @@ renderGallery(currentLayoutIndex);
 if (currentYearElement) {
   currentYearElement.textContent = new Date().getFullYear().toString();
 }
+
+const renderAboutUs = () => {
+  const aboutSection = document.getElementById('about');
+  if (aboutSection) {
+    aboutSection.innerHTML = `
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-gold text-center mb-8">${
+          aboutUsData.title
+        }</h2>
+        <div class="text-lg leading-relaxed text-justify max-w-3xl mx-auto text-gray-300">
+          ${aboutUsData.content
+            .map((paragraph) => `<p class="mb-6">${paragraph}</p>`)
+            .join('')}
+        </div>
+      </div>
+    `;
+  }
+};
+
+renderAboutUs();
 
 console.log('Website is running!');
