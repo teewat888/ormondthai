@@ -12,7 +12,7 @@ export const foodGallery = [
   {
     title: 'Green curry',
     alt: 'Green curry',
-    image: '/food3.jpg',
+    image: '/food3-new.jpg',
   },
   {
     title: 'Sweet and sour pork',
