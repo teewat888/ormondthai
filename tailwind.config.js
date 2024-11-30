@@ -10,6 +10,7 @@ export default {
       },
       fontFamily: {
         caramel: ['Caramel', 'cursive'], // Add the Caramel font
+        greatvibes: ['Great Vibes', 'cursive'], // Add Great Vibes
       },
     },
   },
