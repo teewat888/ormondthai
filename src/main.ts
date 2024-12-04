@@ -151,4 +151,14 @@ if (banquetContainer) {
   banquetContainer.innerHTML = renderBanquetMenu(banquetMenu);
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.querySelector('video');
+  if (video) {
+    video.muted = true; // Ensure it's muted
+    video.play().catch((error) => {
+      console.error('Autoplay failed:', error);
+    });
+  }
+});
+
 console.log('Website is running!');
