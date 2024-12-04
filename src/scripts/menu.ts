@@ -29,6 +29,10 @@ export const renderMenu = (menuData: Category[]) => {
     // Render individual items
     itemsHTML += category.items
       ?.map((item) => {
+        const menuName =
+          item.number === -1
+            ? `<div class="col-span-3">Special</div><div class="col-span-3">${item.name}</div>`
+            : `<div class="col-span-3">${item.number}. ${item.name}</div>`;
         // Check if the item has multiple prices
         const pricesHTML = item.prices
           ? `
@@ -38,7 +42,7 @@ export const renderMenu = (menuData: Category[]) => {
               <div class="text-sm text-gray-400 text-right">Large</div>
             </div>
             <div class="grid grid-cols-5 items-center">
-              <div class="col-span-3">${item.number}. ${item.name}</div>
+              ${menuName}
               ${Object.keys(item.prices)
                 .map((size) => {
                   const price = item.prices?.[size];
@@ -57,7 +61,7 @@ export const renderMenu = (menuData: Category[]) => {
           `
           : `
             <div class="grid grid-cols-5 items-center">
-              <div class="col-span-3">${item.number}. ${item.name}</div>
+              ${menuName}
               ${
                 item.price
                   ? `<div class="col-span-2 text-right font-bold text-gold text-sm">$${item.price.toFixed(
@@ -146,7 +150,9 @@ export const renderBanquetMenu = (banquetMenu: BanquetMenu[]) => {
           ${banquet.courses
             .map(
               (course) => `
-            <h4 class="text-lg font-bold text-gold mt-4">${course.title}</h4>
+            <h4 class="text-lg font-bold text-gold mt-4 font-greatvibes">${
+              course.title
+            }</h4>
             <ul class="list-disc ml-6">
               ${course.items
                 .map((item) => `<li class="text-sm text-gray-300">${item}</li>`)

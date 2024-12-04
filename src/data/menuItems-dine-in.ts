@@ -2,61 +2,61 @@ export const dineInMenu = [
   {
     category: 'Entrée',
     categoryNumber: 1,
-    categoryWideOptions: [{ type: 'Vegetable', price: 13.95 }],
+    categoryWideOptions: [{ type: 'Vegetable', price: 10.95 }],
     items: [
       {
         number: 1,
         name: 'Spring Roll (6 pieces)',
-        price: 15.95,
+        price: 12.95,
         description:
           'Thai style spring rolls gently stuffed with minced chicken & vegetables deep-fried. Served with sweet chili sauce.',
       },
       {
         number: 2,
         name: 'Curry Puffs (6 pieces)',
-        price: 15.95,
+        price: 12.95,
         description:
           'A tasty puff consisting of minced chicken & vegetables, curry flavored served with sweet chili sauce.',
       },
       {
         number: 3,
         name: 'Goong Hom Pa (6 pieces)',
-        price: 17.95,
+        price: 14.95,
         description:
           'King prawns marinated with special sauce wrapped in pastry and served with sweet chili dip.',
       },
       {
         number: 4,
         name: 'Chicken Satay (4 pieces)',
-        price: 17.95,
+        price: 14.95,
         description:
           'Marinated breast chicken fillets served with Thai-style peanut sauce.',
       },
       {
         number: 5,
         name: 'Fish Cake (6 pieces)',
-        price: 17.95,
+        price: 14.95,
         description:
           'Thai fish cakes served with sweet chili sauce, sliced cucumber, and crushed peanuts.',
       },
       {
         number: 6,
         name: 'Golden Bags (6 pieces)',
-        price: 17.95,
+        price: 14.95,
         description:
           'Minced chicken and prawns marinated and wrapped in spring roll pastry. Served with sweet chili sauce.',
       },
       {
         number: 7,
         name: 'Goong Tod (6 pieces)',
-        price: 17.95,
+        price: 14.95,
         description:
           'Delicious king prawns in a crispy batter, deep-fried golden brown, served with a lovely sweet chili sauce.',
       },
       {
         number: 8,
         name: 'Mixed Entree (7 pieces)',
-        price: 18.95,
+        price: 16.95,
         description: 'Selections of above entrees (no.1, 2, 3, 5 & 6).',
       },
     ],
@@ -65,9 +65,9 @@ export const dineInMenu = [
     category: 'Soup',
     categoryNumber: 2,
     categoryWideOptions: [
-      { type: 'Vegetables', price: 14.95 },
-      { type: 'Chicken', price: 15.95 },
-      { type: 'Prawns/Calamari', price: 18.95 },
+      { type: 'Vegetables', price: 10.95 },
+      { type: 'Chicken', price: 12.95 },
+      { type: 'Seafood', price: 14.95 },
     ],
     items: [
       {
@@ -85,7 +85,7 @@ export const dineInMenu = [
       {
         number: 11,
         name: 'Po Tak',
-        price: 18.95,
+        price: 16.95,
         description:
           'Combination seafood in spicy sour soup with Thai herbs and basil leaves.',
       },
@@ -95,8 +95,8 @@ export const dineInMenu = [
     category: 'Salad & Grill',
     categoryNumber: 3,
     categoryWideOptions: [
-      { type: 'Chicken/Beef', price: 24.95 },
-      { type: 'Prawns/Calamari', price: 28.95 },
+      { type: 'Beef', price: 16.95 },
+      { type: 'Prawns/Calamari', price: 18.95 },
     ],
     items: [
       {
@@ -108,32 +108,35 @@ export const dineInMenu = [
       {
         number: 13,
         name: 'Laab',
+        price: 16.95,
         description:
           'Spiced minced chicken salad cooked with lemon juice, herb, chili, and roasted ground rice.',
       },
       {
         number: 14,
         name: 'Nam Sod',
+        price: 16.95,
         description:
           'Minced chicken salad mixed with lemon juice, herbs, ginger, chili, and roasted peanuts.',
       },
       {
         number: 15,
         name: 'Yum Salad',
+        price: 16.95,
         description:
           'Tender beef slices tossed with lemon juice, chili, mint, and crushed ground rice.',
       },
       {
         number: 16,
         name: 'Grilled Pork',
-        price: 28.95,
+        price: 19.95,
         description:
           'Thai-style marinated pork with palm sugar, coriander root, and black pepper. Served with dark soy caramel dipping sauce.',
       },
       {
         number: 17,
         name: 'Duck Salad',
-        price: 28.95,
+        price: 19.95,
         description:
           'Modern Thai salad consisting of roasted duck dressed with a special sauce and roasted peanuts.',
       },
@@ -143,9 +146,9 @@ export const dineInMenu = [
     category: 'Curries',
     categoryNumber: 4,
     categoryWideOptions: [
-      { type: 'Vegetable', price: 23.95 },
-      { type: 'Chicken/Beef', price: 25.95 },
-      { type: 'Prawns/Calamari', price: 27.95 },
+      { type: 'Vegetable', price: 20.95 },
+      { type: 'Chicken/Beef', price: 22.95 },
+      { type: 'Prawns/Calamari', price: 24.95 },
     ],
     items: [
       {
@@ -163,13 +166,14 @@ export const dineInMenu = [
       {
         number: 20,
         name: 'Duck Curry',
-        price: 28.95,
+        price: 26.95,
         description:
           'Modern red curry with sliced roast duck fillet, lychee, pineapple, cherry tomato, and basil leaves.',
       },
       {
         number: 21,
-        name: 'Massaman Curry',
+        name: 'Massaman Curry Beef (Lamb)',
+        price: 29.95,
         description:
           'Southern-style curry with beef in coconut milk, tamarind, potato, onion, and roasted peanuts.',
       },
@@ -198,9 +202,9 @@ export const dineInMenu = [
     category: 'Stir-Fries',
     categoryNumber: 5,
     categoryWideOptions: [
-      { type: 'Vegetable', price: 23.95 },
-      { type: 'Chicken/Beef/Pork', price: 25.95 },
-      { type: 'Prawns/Calamari', price: 27.95 },
+      { type: 'Vegetable', price: 20.95 },
+      { type: 'Chicken/Beef/Pork', price: 22.95 },
+      { type: 'Seafood', price: 24.95 },
     ],
     items: [
       {
@@ -246,9 +250,9 @@ export const dineInMenu = [
     category: 'Hot Stir-Fries',
     categoryNumber: 6,
     categoryWideOptions: [
-      { type: 'Vegetable', price: 23.95 },
-      { type: 'Chicken/Beef/Pork', price: 25.95 },
-      { type: 'Prawns/Calamari', price: 27.95 },
+      { type: 'Vegetable', price: 20.95 },
+      { type: 'Chicken/Beef/Pork', price: 22.95 },
+      { type: 'Prawns/Calamari', price: 24.95 },
     ],
     items: [
       {
@@ -273,6 +277,7 @@ export const dineInMenu = [
       {
         number: 34,
         name: 'Lamb Pirod',
+        price: 26.95,
         description:
           'Stir-fried spicy lamb dish with vegetables, black pepper, chili, Thai herbs, and basil leaves.',
       },
@@ -285,6 +290,7 @@ export const dineInMenu = [
       {
         number: 36,
         name: ' Pad Cha combination seafood',
+        price: 28.95,
         description:
           'Spicy stir-fried with vegetables and lots of Thai herbs in Lemon chilli sauce and basil leaves.',
       },
@@ -293,52 +299,60 @@ export const dineInMenu = [
   {
     category: 'From the Ocean',
     categoryNumber: 7,
-    categoryWideOptions: [
-      { type: 'Chicken/Beef/Pork', price: 25.95 },
-      { type: 'Prawns/Calamari', price: 27.95 },
-      { type: 'Fish (Barramundi fillet)', price: 29.95 },
-    ],
+    // categoryWideOptions: [
+    //   { type: 'Chicken/Beef/Pork', price: 25.95 },
+    //   { type: 'Prawns/Calamari', price: 27.95 },
+    //   { type: 'Fish (Barramundi fillet)', price: 29.95 },
+    // ],
     items: [
       {
         number: 37,
         name: 'Chili Prawns',
-        price: 27.95,
+        price: 24.95,
         description:
           'Stir-fried king prawns with special sweet chili sauce and vegetables, basil leaves.',
       },
       {
         number: 38,
         name: 'Pad Talay',
-        price: 30.95,
+        price: 26.95,
         description:
           'Combination of seafood stir-fried with vegetables in green curry sauce and basil leaves.',
       },
       {
         number: 39,
         name: 'Pad Ruammit Goong',
-        price: 27.95,
+        price: 24.95,
         description:
           'Stir-fried king prawn with snow peas, carrot, onion, baby corn, and mushrooms in oyster sauce.',
       },
       {
         number: 40,
         name: 'Chu Chee',
+        price: 24.95,
         description:
           'Stir-fried king prawns in spicy red curry sauce with vegetables, kefir lime, and basil leaves.',
       },
       {
         number: 41,
         name: 'Pla Sam Rod (Barramundi fillet)',
-        price: 30.95,
+        price: 26.95,
         description:
           'Deep-fried fish topped with special tamarind sauce, chopped vegetables, basil leaves, and cashew nuts.',
       },
       {
         number: 42,
         name: 'Pla Rad Khing (Barramundi fillet)',
-        price: 30.95,
+        price: 26.95,
         description:
           'Deep-fried fish topped with soy bean sauce, ginger, vegetables, and celery.',
+      },
+      {
+        number: -1,
+        name: 'Sam Kra Sat',
+        price: 28.95,
+        description:
+          'Crispy combination King prawn, calamari, chicken stir fried with veegetable, pineapple and cashew nuts in our chef special sauce.',
       },
     ],
   },
@@ -346,9 +360,9 @@ export const dineInMenu = [
     category: 'Rice & Noodle',
     categoryNumber: 8,
     categoryWideOptions: [
-      { type: 'Vegetable', price: 22.95 },
-      { type: 'Chicken/Beef/Pork', price: 25.95 },
-      { type: 'Prawns/Calamari', price: 27.95 },
+      { type: 'Vegetable', price: 18.95 },
+      { type: 'Chicken/Beef/Pork', price: 20.95 },
+      { type: 'Prawns/Calamari', price: 22.95 },
     ],
     items: [
       {
@@ -397,12 +411,14 @@ export const dineInMenu = [
       {
         number: 49,
         name: 'Thai Jasmine Steam Rice',
-        prices: { small: 5.95, large: 6.95 },
+        // prices: { small: 5.95, large: 6.95 },
+        price: 4.95,
       },
       {
         number: 50,
         name: 'Steam Coconut Rice',
-        prices: { small: 6.95, large: 7.95 },
+        // prices: { small: 6.95, large: 7.95 },
+        price: 5.95,
       },
       {
         number: 51,
@@ -412,7 +428,7 @@ export const dineInMenu = [
       {
         number: 52,
         name: 'Prawn Crackers',
-        price: 7.95, // Single price
+        price: 6.95, // Single price
       },
     ],
   },
