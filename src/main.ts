@@ -88,7 +88,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <section id="gallery" class="py-20 bg-gray-900 text-gray-200 text-center">
   <div class="container mx-auto">
     <h2 class="text-4xl font-bold text-gold mb-8 font-greatvibes">Gallery</h2>
-    <video autoplay muted loop controls width="80%" class="mx-auto rounded-lg">
+    <video autoplay muted playsinline loop controls width="80%" class="mx-auto rounded-lg">
       <source src="/pyt.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
