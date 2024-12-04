@@ -1,6 +1,7 @@
-export const menuData = [
+export const dineInMenu = [
   {
     category: 'Entrée',
+    categoryNumber: 1,
     categoryWideOptions: [{ type: 'Vegetable', price: 13.95 }],
     items: [
       {
@@ -62,6 +63,7 @@ export const menuData = [
   },
   {
     category: 'Soup',
+    categoryNumber: 2,
     categoryWideOptions: [
       { type: 'Vegetables', price: 14.95 },
       { type: 'Chicken', price: 15.95 },
@@ -91,6 +93,7 @@ export const menuData = [
   },
   {
     category: 'Salad & Grill',
+    categoryNumber: 3,
     categoryWideOptions: [
       { type: 'Chicken/Beef', price: 24.95 },
       { type: 'Prawns/Calamari', price: 28.95 },
@@ -138,6 +141,7 @@ export const menuData = [
   },
   {
     category: 'Curries',
+    categoryNumber: 4,
     categoryWideOptions: [
       { type: 'Vegetable', price: 23.95 },
       { type: 'Chicken/Beef', price: 25.95 },
@@ -192,6 +196,7 @@ export const menuData = [
   },
   {
     category: 'Stir-Fries',
+    categoryNumber: 5,
     categoryWideOptions: [
       { type: 'Vegetable', price: 23.95 },
       { type: 'Chicken/Beef/Pork', price: 25.95 },
@@ -239,6 +244,7 @@ export const menuData = [
 
   {
     category: 'Hot Stir-Fries',
+    categoryNumber: 6,
     categoryWideOptions: [
       { type: 'Vegetable', price: 23.95 },
       { type: 'Chicken/Beef/Pork', price: 25.95 },
@@ -278,14 +284,15 @@ export const menuData = [
       },
       {
         number: 36,
-        name: 'Pad Prik Thai Dam',
+        name: ' Pad Cha combination seafood',
         description:
-          'Spicy stir-fried meat of your choice in oyster sauce with vegetables, black pepper, peppercorn, chili, sesame oil, and basil leaves.',
+          'Spicy stir-fried with vegetables and lots of Thai herbs in Lemon chilli sauce and basil leaves.',
       },
     ],
   },
   {
     category: 'From the Ocean',
+    categoryNumber: 7,
     categoryWideOptions: [
       { type: 'Chicken/Beef/Pork', price: 25.95 },
       { type: 'Prawns/Calamari', price: 27.95 },
@@ -337,6 +344,7 @@ export const menuData = [
   },
   {
     category: 'Rice & Noodle',
+    categoryNumber: 8,
     categoryWideOptions: [
       { type: 'Vegetable', price: 22.95 },
       { type: 'Chicken/Beef/Pork', price: 25.95 },
@@ -378,6 +386,33 @@ export const menuData = [
         name: 'Pad Mee',
         description:
           'Stir-fried yellow egg noodles with meat of your choice in soy bean sauce and vegetables.',
+      },
+    ],
+  },
+  {
+    category: 'Sides & Add-Ons',
+    categoryNumber: 9,
+    priceHeaders: ['Small', 'Large'],
+    items: [
+      {
+        number: 49,
+        name: 'Thai Jasmine Steam Rice',
+        prices: { small: 5.95, large: 6.95 },
+      },
+      {
+        number: 50,
+        name: 'Steam Coconut Rice',
+        prices: { small: 6.95, large: 7.95 },
+      },
+      {
+        number: 51,
+        name: 'Roti Bread',
+        price: 6.95, // Single price
+      },
+      {
+        number: 52,
+        name: 'Prawn Crackers',
+        price: 7.95, // Single price
       },
     ],
   },
