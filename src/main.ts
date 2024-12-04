@@ -55,29 +55,15 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div class="container mx-auto flex justify-center space-x-8">
     <a href="#hero" class="hover:text-gold transition menu-link">Home</a>
     <a href="#about" class="hover:text-gold transition menu-link">About Us</a>
-    <!-- a href="#gallery" class="hover:text-gold transition menu-link">Gallery</a -->
-    <a href="#banquet-menu" class="hover:text-gold transition menu-link">Menu</a>
+    <a href="#food-banquet-menu" class="hover:text-gold transition menu-link">Menu</a>
+     <a href="#gallery" class="hover:text-gold transition menu-link">Gallery</a>
     <a href="#contact" class="hover:text-gold transition menu-link">Contact Us</a>
   </div>
 </nav>
 
 <!-- About Us Section -->
 <section id="about" class="py-20 bg-gray-900 text-gray-200">
-  
 </section>
-
-<!-- Food Gallery Section -->
-<!-- section id="gallery" class="py-20 bg-gray-900 text-gray-200">
-  <div class="container mx-auto px-4">
-    <h2 class="text-4xl font-bold text-gold text-center mb-12 font-greatvibes">Gallery</h2>
-  <div id="food-gallery" class="relative">
-    <!-- Initial layout will be dynamically inserted here -->
-  </div>
-      
-    </div>
-  </div>
-</section -->
-
 <section id="food-banquet-menu" class="py-20 bg-gray-900 text-gray-300">
   <div class="container mx-auto">
     <h2 class="text-4xl font-bold text-gold text-center mb-12 font-greatvibes">Banquet Menu</h2>
@@ -98,7 +84,16 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <div id="takeaway-menu" class="mx-4 md:mx-auto"></div>
   </div>
 </section>
-
+<!-- Food Gallery Section -->
+<section id="gallery" class="py-20 bg-gray-900 text-gray-200 text-center">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-gold mb-8 font-greatvibes">Gallery</h2>
+    <video autoplay muted loop controls width="80%" class="mx-auto rounded-lg">
+      <source src="/pyt.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
 
 <!-- Contact Section -->
 <section id="contact" class="py-20 bg-gray-900 text-gray-200 text-center">
