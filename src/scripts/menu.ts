@@ -8,7 +8,7 @@ type Category = {
     description?: string;
     prices?: { [size: string]: number }; // e.g., { small: 5.95, large: 6.95 }
     price?: number; // Single price for the item
-    number: number;
+    number?: number;
   }[];
 };
 
@@ -21,6 +21,7 @@ export const renderMenu = (menuData: Category[]) => {
     (menu) => menu.categoryNumber > 5 && menu.categoryNumber < 9
   );
   const extraCategories = menuData.filter((menu) => menu.categoryNumber === 9);
+  const dessertCategory = menuData.find((menu) => menu.categoryNumber === 10);
 
   // Render items in a category
   const renderItems = (category: Category) => {
@@ -29,10 +30,13 @@ export const renderMenu = (menuData: Category[]) => {
     // Render individual items
     itemsHTML += category.items
       ?.map((item) => {
-        const menuName =
-          item.number === -1
+        const menuName = item.number
+          ? item?.number === -1
             ? `<div class="col-span-3">Special</div><div class="col-span-3">${item.name}</div>`
-            : `<div class="col-span-3">${item.number}. ${item.name}</div>`;
+            : `<div class="col-span-3">${item?.number}. ${item.name}</div>`
+          : `
+            <div class="col-span-3">${item.name}</div>
+            `;
         // Check if the item has multiple prices
         const pricesHTML = item.prices
           ? `
@@ -117,7 +121,8 @@ export const renderMenu = (menuData: Category[]) => {
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <div>${leftColumnCategories.map(renderCategory).join('')}</div>
       <div>${rightColumnCategories.map(renderCategory).join('')}
-        <div class='-mt-10'>${renderExtraItems(extraCategories)}</div>
+        <div class='-mt-10 mb-6'>${renderExtraItems(extraCategories)}</div>
+         ${dessertCategory ? renderCategory(dessertCategory) : ''}
       </div>
     </div>
   `;

@@ -432,4 +432,51 @@ export const dineInMenu = [
       },
     ],
   },
+  {
+    category: 'Desserts',
+    categoryNumber: 10, // Unique identifier for desserts
+    items: [
+      {
+        name: 'Vanilla Ice Cream',
+        price: 10.95,
+      },
+      {
+        name: 'Coconut Ice Cream',
+        price: 12.95,
+      },
+      {
+        name: 'Kao Neaw Dam',
+        price: 14.95,
+        description:
+          'Black sticky rice flavored with coconut milk served with Thai custard',
+      },
+      {
+        name: 'Kao Neaw Perk',
+        price: 14.95,
+        description:
+          'Thai-sweet sticky rice and taro served with coconut ice cream',
+      },
+      {
+        name: 'Banana Split',
+        price: 14.95,
+        description: 'Banana and ice cream topped with chocolate in season',
+      },
+      {
+        name: 'Banana Fritter',
+        price: 14.95,
+        description:
+          'Banana in a crispy light batter deep-fried served with vanilla ice cream',
+      },
+      {
+        name: 'Gua Boad Chee',
+        price: 14.95,
+      },
+      {
+        name: 'Fried Ice Cream',
+        price: 16.95,
+        description:
+          'New flavor coconut ice cream mixed with nuts, almond, macadamia, corn flakes, pistachio nuts',
+      },
+    ],
+  },
 ];
