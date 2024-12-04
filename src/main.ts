@@ -1,10 +1,10 @@
 import { renderAboutUs } from './scripts/content';
-import { renderBanquetMenu, renderMenu } from './scripts/menu';
+// import { renderBanquetMenu, renderMenu } from './scripts/menu';
 import { injectMetaTags } from './scripts/meta';
-import { takeawayMenu } from './data/menuItems-takeaway';
-import { dineInMenu } from './data/menuItems-dine-in';
+// import { takeawayMenu } from './data/menuItems-takeaway';
+// import { dineInMenu } from './data/menuItems-dine-in';
 import './style.css';
-import { banquetMenu } from './data/banquet-menu';
+// import { banquetMenu } from './data/banquet-menu';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <!-- Hero Section -->
@@ -56,7 +56,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <a href="#hero" class="hover:text-gold transition menu-link">Home</a>
     <a href="#about" class="hover:text-gold transition menu-link">About Us</a>
     <!-- a href="#gallery" class="hover:text-gold transition menu-link">Gallery</a -->
-    <!-- a href="#foodmenu" class="hover:text-gold transition menu-link">Menu</a>
+    <!-- a href="#foodmenu" class="hover:text-gold transition menu-link">Menu</a -->
     <a href="#contact" class="hover:text-gold transition menu-link">Contact Us</a>
   </div>
 </nav>
