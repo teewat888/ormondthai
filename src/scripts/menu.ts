@@ -45,7 +45,7 @@ export const renderMenu = (menuData: Category[]) => {
               <div class="text-sm text-gray-400 text-right">Small</div>
               <div class="text-sm text-gray-400 text-right">Large</div>
             </div>
-            <div class="grid grid-cols-5 items-center">
+            <div class="grid grid-cols-5 items-center ">
               ${menuName}
               ${Object.keys(item.prices)
                 .map((size) => {
@@ -64,11 +64,11 @@ export const renderMenu = (menuData: Category[]) => {
             </div>
           `
           : `
-            <div class="grid grid-cols-5 items-center">
+            <div class="grid grid-cols-5 items-center font-playfairdisplay">
               ${menuName}
               ${
                 item.price
-                  ? `<div class="col-span-2 text-right font-bold text-gold text-sm">$${item.price.toFixed(
+                  ? `<div class="col-span-2 text-right font-bold text-gold text-sm font-playfairdisplay">$${item.price.toFixed(
                       2
                     )}</div>`
                   : '<div class="col-span-2"></div>'
@@ -80,7 +80,7 @@ export const renderMenu = (menuData: Category[]) => {
           ${pricesHTML}
           ${
             item.description
-              ? `<p class="text-sm text-gray-400 mb-2">${item.description}</p>`
+              ? `<p class="text-sm text-gray-400  mb-2">${item.description}</p>`
               : ''
           }
         `;
@@ -93,16 +93,14 @@ export const renderMenu = (menuData: Category[]) => {
   // Render a single category
   const renderCategory = (category: Category) => `
     <div class="mb-12">
-      <h3 class="text-2xl font-bold text-gold mb-4 font-greatvibes">${
-        category.category
-      }</h3>
+      <h3 class="text-2xl font-bold text-gold mb-4 ">${category.category}</h3>
       ${
         category.categoryWideOptions
           ?.map(
             (option) => `
             <div class="flex justify-between mb-2 text-sm">
-              <span>${option.type}</span>
-              <span class="font-bold text-gold">$${option.price.toFixed(
+              <span class='font-playfairdisplay'>${option.type}</span>
+              <span class="font-bold text-gold font-playfairdisplay">$${option.price.toFixed(
                 2
               )}</span>
             </div>
@@ -147,20 +145,18 @@ export const renderBanquetMenu = (banquetMenu: BanquetMenu[]) => {
         .map(
           (banquet) => `
         <div class="p-6 border rounded-lg shadow-md bg-gray-800 text-gray-200">
-          <h3 class="text-2xl font-bold text-gold mb-2 font-greatvibes">${
-            banquet.title
-          }</h3>
-          <p class="text-lg font-semibold">${banquet.price}</p>
-          <p class="text-sm text-gray-400 mb-4">${banquet.conditions}</p>
+          <h3 class="text-2xl font-bold text-gold mb-2 ">${banquet.title}</h3>
+          <p class="text-lg font-semibold ">${banquet.price}</p>
+          <p class="text-sm text-gray-400 mb-4 ">${banquet.conditions}</p>
           ${banquet.courses
             .map(
               (course) => `
-            <h4 class="text-lg font-bold text-gold mt-4 font-greatvibes">${
-              course.title
-            }</h4>
+            <h4 class="text-lg font-bold text-gold mt-4 ">${course.title}</h4>
             <ul class="list-disc ml-6">
               ${course.items
-                .map((item) => `<li class="text-sm text-gray-300">${item}</li>`)
+                .map(
+                  (item) => `<li class="text-sm text-gray-300 ">${item}</li>`
+                )
                 .join('')}
             </ul>
           `

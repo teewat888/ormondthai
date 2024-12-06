@@ -11,42 +11,39 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <section id="hero" class="h-screen bg-gradient-to-r from-black via-gray-900 to-black text-white flex flex-col justify-center items-center">
   <!-- Logo -->
   <div class="flex flex-col items-center text-center">
-    <img src="/logo.png" alt="Phaya Thai Logo" class="h-40 w-auto mb-6" />
-    <h1 class="text-4xl md:text-6xl font-bold tracking-wide text-gold font-greatvibes">
-      Phaya Thai Restaurant
-    </h1>
+    <img src="/logo.png" alt="Phaya Thai Logo" class="h-auto w-auto mb-2" />
+   
   </div>
     <!-- Contact Details -->
-<div class="mt-8 text-center">
-  <p class="text-lg text-gray-300">
-    <span class="font-bold text-gold">Shop:</span> 6/96 Canterbury Road, Blackburn South VIC
-  </p>
-  <p class="text-lg text-gray-300">
-    <span class="font-bold text-gold">Phone:</span> (03) 9894 3819 &nbsp; | &nbsp; 
-    <span class="font-bold text-gold">Mobile:</span> 0412 289 289
-  </p>
-  <!-- p class="text-lg text-gray-300">
-    <span class="font-bold text-gold">Email:</span> info@phayathai.com.au
-  </p -->
-</div>
+
   <!-- Scroll Down Indicator -->
-  <div class="mt-12 animate-bounce">
-    <a href="#about">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="w-8 h-8 text-gold"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M12 3v18m6-6l-6 6m0 0l-6-6"
-        />
-      </svg>
-    </a>
+  <!-- div class="mt-2 animate-bounce">
+  <a href="#about">
+    <img
+      src="/pointer.png"
+      alt="Scroll Down Indicator"
+      class="w-auto h-auto"
+    />
+  </a>
+</div -->
+<div class="container mx-auto text-center text-lightGold font-roboto">
+    <h3 class="text-4xl font-bold text-gold mb-8 font-roboto"><a href='https://phayathai.com.au'>www.PhayaThai.com.au</a></h3>
+    <p class="text-md font-roboto">Open 7 day a week from 5.00 pm to 10.00 pm</p>
+    <p class="text-md font-roboto">Shop: 6/96 Canterbury Road</p>
+    <p class="text-md font-roboto">Blackburn South VIC 3130</p>
+    <p class="text-md font-roboto flex justify-center items-center space-x-2">
+     Visit on &nbsp;<i class="fa-brands fa-square-facebook text-gold text-xl"></i>
+      <span>Phaya Thai restaurant</span>
+    </p>
+    <div class='flex justify-center items-center space-x-2'>
+    <p class="text-md font-roboto flex justify-center items-center space-x-2">
+      <i class="fas fa-phone-alt text-gold text-xl"></i>
+      <span>(03) 9894 3819</span>
+    </p>
+    <p class="text-md font-roboto flex justify-center items-center space-x-2">
+      <i class="fas fa-mobile-alt text-gold text-xl"></i>
+      <span>041-2289289</span>
+    </p></div>
   </div>
 </section>
 
@@ -65,29 +62,35 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <section id="about" class="py-20 bg-gray-900 text-gray-200">
 </section>
 <section id="food-banquet-menu" class="py-20 bg-gray-900 text-gray-300">
+<div class = 'text-center mx-auto mb-6'>
+<p>For those who have Vegetarian it’s also available</p>
+  <p>Booking as a group is recommended to select banquet</p>
+</div>
+
   <div class="container mx-auto">
-    <h2 class="text-4xl font-bold text-gold text-center mb-12 font-greatvibes">Banquet Menu</h2>
+    <h2 class="text-4xl font-bold text-gold text-center mb-12 ">Banquet Menu</h2>
     <div id="banquet-menu" class="mx-4 md:mx-auto"></div>
   </div>
 </section>
 
 <section id="food-dine-in-menu" class="py-20 bg-gray-900 text-gray-300">
   <div class="container mx-auto">
-    <h2 class="text-4xl font-bold text-gold text-center mb-12 font-greatvibes">Dine In Menu</h2>
+  
+    <h2 class="text-4xl font-bold text-gold text-center mb-12 ">Dine In Menu</h2>
     <div id="dine-in-menu" class="mx-4 md:mx-auto"></div>
   </div>
 </section>
 
 <section id="food-takeaway-menu" class="py-20 bg-gray-900 text-gray-300">
   <div class="container mx-auto">
-    <!-- h2 class="text-4xl font-bold text-gold text-center mb-12 font-greatvibes">Takeaway Menu</h2 -->
+    <!-- h2 class="text-4xl font-bold text-gold text-center mb-12 ">Takeaway Menu</h2 -->
     <div id="takeaway-menu" class="mx-4 md:mx-auto"></div>
   </div>
 </section>
 <!-- Food Gallery Section -->
 <section id="gallery" class="py-20 bg-gray-900 text-gray-200 text-center">
   <div class="container mx-auto">
-    <h2 class="text-4xl font-bold text-gold mb-8 font-greatvibes">Gallery</h2>
+    <h2 class="text-4xl font-bold text-gold mb-8 ">Gallery</h2>
     <video autoplay muted playsinline loop controls width="80%" class="mx-auto rounded-lg">
       <source src="/pyt.mp4" type="video/mp4" />
       Your browser does not support the video tag.
@@ -98,17 +101,17 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <!-- Contact Section -->
 <section id="contact" class="py-20 bg-gray-900 text-gray-200 text-center">
   <div class="container mx-auto">
-    <h2 class="text-4xl font-bold text-gold mb-8 font-greatvibes">Contact Us</h2>
-    <p class="text-lg">Shop 6/96 Canterbury Road, Blackburn South VIC</p>
-    <p class="text-lg">Phone: (03) 98943819</p>
-    <p class="text-lg">Mobile: 0412289289</p>
+    <h2 class="text-4xl font-bold text-gold mb-8 ">Contact Us</h2>
+    <p class="text-lg">Shop 6/96 Canterbury Road, Blackburn South VIC 3130</p>
+    <p class="text-lg">Phone: (03) 9894 3819</p>
+    <p class="text-lg">Mobile: 041-2 289 289</p>
     <!-- p class="text-lg">Email: info@phayathai.com.au</p -->
   </div>
 </section>
 
 <!-- Footer -->
 <footer class="bg-black text-gray-400 py-4 text-center">
-  <p>&copy; <span id="current-year"></span> Phaya Thai Restaurant. All rights reserved.</p>
+  <p class='font-playfairdisplay'>&copy; <span id="current-year"></span> Phaya Thai Restaurant. All rights reserved.</p>
 </footer>
 `;
 
