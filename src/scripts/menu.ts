@@ -64,11 +64,11 @@ export const renderMenu = (menuData: Category[]) => {
             </div>
           `
           : `
-            <div class="grid grid-cols-5 items-center font-playfairdisplay">
+            <div class="grid grid-cols-5 items-center font-roboto">
               ${menuName}
               ${
                 item.price
-                  ? `<div class="col-span-2 text-right font-bold text-gold text-sm font-playfairdisplay">$${item.price.toFixed(
+                  ? `<div class="col-span-2 text-right font-bold text-gold text-sm font-roboto">$${item.price.toFixed(
                       2
                     )}</div>`
                   : '<div class="col-span-2"></div>'
@@ -99,8 +99,8 @@ export const renderMenu = (menuData: Category[]) => {
           ?.map(
             (option) => `
             <div class="flex justify-between mb-2 text-sm">
-              <span class='font-playfairdisplay'>${option.type}</span>
-              <span class="font-bold text-gold font-playfairdisplay">$${option.price.toFixed(
+              <span class='font-roboto'>${option.type}</span>
+              <span class="font-bold text-gold font-roboto">$${option.price.toFixed(
                 2
               )}</span>
             </div>

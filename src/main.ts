@@ -5,6 +5,7 @@ import { injectMetaTags } from './scripts/meta';
 import { dineInMenu } from './data/menuItems-dine-in';
 import './style.css';
 import { banquetMenu } from './data/banquet-menu';
+import { takeawayMenu } from './data/menuItems-takeaway';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <!-- Hero Section -->
@@ -32,7 +33,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <p class="text-md font-roboto">Shop: 6/96 Canterbury Road</p>
     <p class="text-md font-roboto">Blackburn South VIC 3130</p>
     <p class="text-md font-roboto flex justify-center items-center space-x-2">
-     Visit on &nbsp;<i class="fa-brands fa-square-facebook text-gold text-xl"></i>
+     Visit on &nbsp;<img src="/fb-logo.png" alt="facebook" class="h-6 w-auto" />
       <span>Phaya Thai restaurant</span>
     </p>
     <div class='flex justify-center items-center space-x-2'>
@@ -83,7 +84,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 <section id="food-takeaway-menu" class="py-20 bg-gray-900 text-gray-300">
   <div class="container mx-auto">
-    <!-- h2 class="text-4xl font-bold text-gold text-center mb-12 ">Takeaway Menu</h2 -->
+    <h2 class="text-4xl font-bold text-gold text-center mb-12 ">Takeaway Menu</h2>
     <div id="takeaway-menu" class="mx-4 md:mx-auto"></div>
   </div>
 </section>
@@ -111,7 +112,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 <!-- Footer -->
 <footer class="bg-black text-gray-400 py-4 text-center">
-  <p class='font-playfairdisplay'>&copy; <span id="current-year"></span> Phaya Thai Restaurant. All rights reserved.</p>
+  <p class='font-roboto'>&copy; <span id="current-year"></span> Phaya Thai Restaurant. All rights reserved.</p>
 </footer>
 `;
 
@@ -141,15 +142,15 @@ injectMetaTags();
 // Render
 renderAboutUs();
 const dineInContainer = document.getElementById('dine-in-menu');
-// const takeawayContainer = document.getElementById('takeaway-menu');
+const takeawayContainer = document.getElementById('takeaway-menu');
 const banquetContainer = document.getElementById('banquet-menu');
 
 if (dineInContainer) {
   dineInContainer.innerHTML = renderMenu(dineInMenu);
 }
-// if (takeawayContainer) {
-//   takeawayContainer.innerHTML = renderMenu(takeawayMenu);
-// }
+if (takeawayContainer) {
+  takeawayContainer.innerHTML = renderMenu(takeawayMenu);
+}
 if (banquetContainer) {
   banquetContainer.innerHTML = renderBanquetMenu(banquetMenu);
 }
