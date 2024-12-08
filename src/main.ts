@@ -28,7 +28,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   </a>
 </div -->
 <div class="container mx-auto text-center text-lightGold font-roboto">
-    <h3 class="text-4xl font-bold text-gold mb-8 font-roboto"><a href='https://phayathai.com.au'>www.PhayaThai.com.au</a></h3>
+    <h3 class="text-4xl font-bold text-gold mb-8 font-roboto"><a href='#about'>www.PhayaThai.com.au</a></h3>
     <p class="text-md font-roboto">Open 7 day a week from 5.00 pm to 10.00 pm</p>
     <p class="text-md font-roboto">Shop: 6/96 Canterbury Road</p>
     <p class="text-md font-roboto">Blackburn South VIC 3130</p>
