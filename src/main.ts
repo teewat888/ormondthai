@@ -12,7 +12,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <section id="hero" class="h-screen bg-gradient-to-r from-black via-gray-900 to-black text-white flex flex-col justify-center items-center">
   <!-- Logo -->
   <div class="flex flex-col items-center text-center">
-    <img src="/logo.png" alt="Phaya Thai Logo" class="h-auto w-auto mb-2" />
+    <img src="/logo.png" alt="Phaya Thai Logo" class="h-auto w-auto mb-4" />
    
   </div>
     <!-- Contact Details -->
@@ -92,7 +92,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <section id="gallery" class="py-20 bg-gray-900 text-gray-200 text-center">
   <div class="container mx-auto">
     <h2 class="text-4xl font-bold text-gold mb-8 ">Gallery</h2>
-    <video autoplay muted playsinline loop controls width="80%" class="mx-auto rounded-lg">
+    <video autoplay playsinline loop controls width="80%" class="mx-auto rounded-lg">
       <source src="/pyt.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
@@ -158,7 +158,7 @@ if (banquetContainer) {
 document.addEventListener('DOMContentLoaded', () => {
   const video = document.querySelector('video');
   if (video) {
-    video.muted = true; // Ensure it's muted
+    // video.muted = true; // Ensure it's muted
     video.play().catch((error) => {
       console.error('Autoplay failed:', error);
     });
