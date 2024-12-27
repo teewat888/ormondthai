@@ -6,6 +6,8 @@ import { dineInMenu } from './data/menuItems-dine-in';
 import './style.css';
 import { banquetMenu } from './data/banquet-menu';
 import { takeawayMenu } from './data/menuItems-takeaway';
+import { renderDrinkMenu } from './scripts/drinkMenu';
+import { drinkMenuData } from './data/menuItems-drink';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <!-- Hero Section -->
@@ -50,11 +52,12 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 <!-- Navigation -->
 <nav id="navigation" class="sticky top-0 bg-black text-white py-4 shadow-lg z-50">
-  <div class="container mx-auto flex justify-center space-x-8">
+  <div class="container md:mx-auto mx-2 flex justify-center space-x-8 flex-wrap ">
     <a href="#hero" class="hover:text-gold transition menu-link">Home</a>
-    <a href="#about" class="hover:text-gold transition menu-link">About Us</a>
+    <a href="#about" class="hover:text-gold transition menu-link whitespace-nowrap">About Us</a>
     <a href="#food-banquet-menu" class="hover:text-gold transition menu-link">Menu</a>
      <a href="#gallery" class="hover:text-gold transition menu-link">Gallery</a>
+     <!-- a href="#team" class="hover:text-gold transition menu-link">Team</a -->
     <a href="#contact" class="hover:text-gold transition menu-link">Contact Us</a>
   </div>
 </nav>
@@ -81,7 +84,12 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <div id="dine-in-menu" class="mx-4 md:mx-auto"></div>
   </div>
 </section>
-
+<section id="food-drink-menu" class="py-20 bg-gray-900 text-gray-300">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-gold text-center mb-12 ">Drink Menu</h2>
+    <div id="drink-menu" class="mx-4 md:mx-auto"></div>
+  </div>
+</section>
 <section id="food-takeaway-menu" class="py-20 bg-gray-900 text-gray-300">
   <div class="container mx-auto">
     <h2 class="text-4xl font-bold text-gold text-center mb-12 ">Takeaway Menu</h2>
@@ -98,7 +106,22 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     </video>
   </div>
 </section>
-
+<!-- team Section -->
+<!-- this section contain 1 image of the team member fullwidth with good proportion -->
+<!-- section id="team" class="py-20 bg-gray-900 text-gray-200 text-center">
+<div class="container mx-auto">
+  <h2 class="text-4xl font-bold text-gold mb-8 ">Team</h2>
+  <div class="flex flex-wrap justify-center">
+    <div class="w-full px-4 mb-6">
+      <div class="h-full bg-gray-800 rounded-lg overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="team member" class="object-cover object-center">
+      </div>
+     
+    </div>
+</div>
+</div>
+</section -->
+  
 <!-- Contact Section -->
 <section id="contact" class="py-20 bg-gray-900 text-gray-200 text-center">
   <div class="container mx-auto">
@@ -144,6 +167,7 @@ renderAboutUs();
 const dineInContainer = document.getElementById('dine-in-menu');
 const takeawayContainer = document.getElementById('takeaway-menu');
 const banquetContainer = document.getElementById('banquet-menu');
+const drinkContainer = document.getElementById('drink-menu');
 
 if (dineInContainer) {
   dineInContainer.innerHTML = renderMenu(dineInMenu);
@@ -153,6 +177,10 @@ if (takeawayContainer) {
 }
 if (banquetContainer) {
   banquetContainer.innerHTML = renderBanquetMenu(banquetMenu);
+}
+
+if (drinkContainer) {
+  drinkContainer.innerHTML = renderDrinkMenu(drinkMenuData);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
