@@ -35,7 +35,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <p class="text-md font-roboto">Shop: 6/96 Canterbury Road</p>
     <p class="text-md font-roboto">Blackburn South VIC 3130</p>
     <p class="text-md font-roboto flex justify-center items-center space-x-2">
-     Visit on &nbsp;<img src="/fb-logo.png" alt="facebook" class="h-6 w-auto" />
+     Visit on &nbsp;<a href="#"><img src="/fb-logo.png" alt="facebook" class="h-6 w-auto" /></a>
       <span>Phaya Thai restaurant</span>
     </p>
     <div class='flex justify-center items-center space-x-2'>
@@ -57,7 +57,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <a href="#about" class="hover:text-gold transition menu-link whitespace-nowrap">About Us</a>
     <a href="#food-banquet-menu" class="hover:text-gold transition menu-link">Menu</a>
      <a href="#gallery" class="hover:text-gold transition menu-link">Gallery</a>
-     <!-- a href="#team" class="hover:text-gold transition menu-link">Team</a -->
+     <a href="#team" class="hover:text-gold transition menu-link">Team</a>
     <a href="#contact" class="hover:text-gold transition menu-link">Contact Us</a>
   </div>
 </nav>
@@ -98,29 +98,53 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 </section>
 <!-- Food Gallery Section -->
 <section id="gallery" class="py-20 bg-gray-900 text-gray-200 text-center">
-  <div class="container mx-auto">
+  <div class="container mx-auto mb-10">
     <h2 class="text-4xl font-bold text-gold mb-8 ">Gallery</h2>
     <video autoplay playsinline loop controls width="80%" class="mx-auto rounded-lg">
       <source src="/pyt.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </div>
-</section>
-<!-- team Section -->
-<!-- this section contain 1 image of the team member fullwidth with good proportion -->
-<!-- section id="team" class="py-20 bg-gray-900 text-gray-200 text-center">
-<div class="container mx-auto">
-  <h2 class="text-4xl font-bold text-gold mb-8 ">Team</h2>
-  <div class="flex flex-wrap justify-center">
-    <div class="w-full px-4 mb-6">
-      <div class="h-full bg-gray-800 rounded-lg overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="team member" class="object-cover object-center">
+  </section>
+
+<!-- Team Section -->
+<section id="team" class="py-20 bg-gradient-to-r from-gray-400 via-gray-300 to-gray-400 text-gray-800">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-gold text-center mb-12">Team</h2>
+    <div class="flex flex-col md:flex-row flex-wrap justify-center gap-8">
+      <!-- Tula -->
+      <div class="group text-center cursor-pointer w-full md:w-1/3">
+        <div class="relative">
+          <img
+            src="/tula.png"
+            alt="Tula"
+            class="w-full rounded-lg bg-white shadow-lg transform transition-transform duration-300 scale-95 group-hover:scale-100"
+          />
+        </div>
       </div>
-     
+      <!-- Maticka -->
+      <div class="group text-center cursor-pointer w-full md:w-1/3">
+        <div class="relative">
+          <img
+            src="/maticka.png"
+            alt="Maticka"
+            class="w-full rounded-lg bg-white shadow-lg transform transition-transform duration-300 scale-95 group-hover:scale-100"
+          />
+        </div>
+      </div>
+      <!-- Phijira -->
+      <div class="group text-center cursor-pointer w-full md:w-1/3">
+        <div class="relative">
+          <img
+            src="/phijira.png"
+            alt="Phijira"
+            class="w-full rounded-lg bg-white shadow-lg transform transition-transform duration-300 scale-95 group-hover:scale-100"
+          />
+        </div>
+      </div>
     </div>
-</div>
-</div>
-</section -->
+  </div>
+</section>
   
 <!-- Contact Section -->
 <section id="contact" class="py-20 bg-gray-900 text-gray-200 text-center">
