@@ -4,7 +4,7 @@ export const banquetMenu = [
     price: '$55 per person',
     conditions: '(minimum 4 people)',
     courses: [
-      { title: "Entree'", items: ["Mix entree'"] },
+      { title: "Entrée", items: ["Mix entrée"] },
       { title: 'Soup', items: ['Tom Yum Goong or Tom Kha Goong'] },
       {
         title: 'Main Course',
@@ -24,7 +24,7 @@ export const banquetMenu = [
     price: '$45 per person',
     conditions: '(minimum 4 people)',
     courses: [
-      { title: "Entree'", items: ["Mix entree'"] },
+      { title: "Entrée", items: ["Mix entrée"] },
       {
         title: 'Main Course',
         items: [

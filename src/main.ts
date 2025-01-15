@@ -67,7 +67,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 </section>
 <section id="food-banquet-menu" class="py-20 bg-gray-900 text-gray-300">
 <div class = 'text-center mx-auto mb-6'>
-<p>For those who have Vegetarian it’s also available</p>
+<p>For those who are Vegetarians, we also cater for you</p>
   <p>Booking as a group is recommended to select banquet</p>
 </div>
 

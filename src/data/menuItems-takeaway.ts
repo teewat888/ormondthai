@@ -55,9 +55,9 @@ export const takeawayMenu = [
       },
       {
         number: 8,
-        name: 'Mixed Entree (7 pieces)',
+        name: 'Mixed Entrée (7 pieces)',
         price: 15.95,
-        description: 'Selections of above entrees (no.1, 2, 3, 5 & 6).',
+        description: 'Selections of above entrées (no.1, 2, 3, 5 & 6).',
       },
     ],
   },
