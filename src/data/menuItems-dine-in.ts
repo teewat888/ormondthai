@@ -48,7 +48,7 @@ export const dineInMenu = [
       },
       {
         number: 7,
-        name: 'Goong Tod 5 pieces)',
+        name: 'Goong Tod (5 pieces)',
         price: 14.95,
         description:
           'Delicious king prawns in a crispy batter, deep-fried golden brown, served with a lovely sweet chili sauce.',
