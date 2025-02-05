@@ -6,21 +6,21 @@ export const takeawayMenu = [
     items: [
       {
         number: 1,
-        name: 'Spring Roll (6 pieces)',
+        name: 'Spring Roll (5 pieces)',
         price: 11.95,
         description:
           'Thai style spring rolls gently stuffed with minced chicken & vegetables deep-fried. Served with sweet chili sauce.',
       },
       {
         number: 2,
-        name: 'Curry Puffs (6 pieces)',
+        name: 'Curry Puffs (5 pieces)',
         price: 11.95,
         description:
           'A tasty puff consisting of minced chicken & vegetables, curry flavored served with sweet chili sauce.',
       },
       {
         number: 3,
-        name: 'Goong Hom Pa (6 pieces)',
+        name: 'Goong Hom Pa (5 pieces)',
         price: 13.95,
         description:
           'King prawns marinated with special sauce wrapped in pastry and served with sweet chili dip.',
@@ -34,21 +34,21 @@ export const takeawayMenu = [
       },
       {
         number: 5,
-        name: 'Fish Cake (6 pieces)',
+        name: 'Fish Cake (5 pieces)',
         price: 13.95,
         description:
           'Thai fish cakes served with sweet chili sauce, sliced cucumber, and crushed peanuts.',
       },
       {
         number: 6,
-        name: 'Golden Bags (6 pieces)',
+        name: 'Golden Bags (5 pieces)',
         price: 13.95,
         description:
           'Minced chicken and prawns marinated and wrapped in spring roll pastry. Served with sweet chili sauce.',
       },
       {
         number: 7,
-        name: 'Goong Tod (6 pieces)',
+        name: 'Goong Tod (5 pieces)',
         price: 13.95,
         description:
           'Delicious king prawns in a crispy batter, deep-fried golden brown, served with a lovely sweet chili sauce.',
