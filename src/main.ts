@@ -183,8 +183,10 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         &times;
       </button>
       <h2 class="text-2xl font-bold mb-4 text-center">Reservation</h2>
-      <form name="reservation" class="space-y-4" netlify>
+      <form name="reservation" class="space-y-4" method="POST" data-netlify="true">
         <input type="hidden" name="form-name" value="reservation" />
+         <input type="hidden" name="subject" 
+  value="Restaurant booking from %{formName}" />
         <div>
           <label for="name" class="block mb-1">Name</label>
           <input type="text" id="name" name="name" required class="w-full p-2 border rounded" />
