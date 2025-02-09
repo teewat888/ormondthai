@@ -48,14 +48,14 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <span>041-2289289</span>
     </p>
     </div>
-      <div class="mt-4">
+      <!-- div class="mt-4">
         <button 
           id="openModalBtn"
           class="inline-block bg-gold text-black py-2 px-4 rounded-md hover:bg-lightGold transition"
         >
           Book Now
         </button>
-      </div>
+      </div -->
   </div>
 </section>
 
