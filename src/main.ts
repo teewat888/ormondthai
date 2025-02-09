@@ -46,7 +46,16 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <p class="text-md font-roboto flex justify-center items-center space-x-2">
       <i class="fas fa-mobile-alt text-gold text-xl"></i>
       <span>041-2289289</span>
-    </p></div>
+    </p>
+    </div>
+      <div class="mt-4">
+        <button 
+          id="openModalBtn"
+          class="inline-block bg-gold text-black py-2 px-4 rounded-md hover:bg-lightGold transition"
+        >
+          Book Now
+        </button>
+      </div>
   </div>
 </section>
 
@@ -161,6 +170,52 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <footer class="bg-black text-gray-400 py-4 text-center">
   <p class='font-roboto'>&copy; <span id="current-year"></span> Phaya Thai Restaurant. All rights reserved.</p>
 </footer>
+ <!-- Modal -->
+  <div 
+    id="bookingModal" 
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+  >
+    <div class="bg-white w-11/12 md:w-1/2 p-6 rounded shadow-lg relative">
+      <button 
+        id="closeModalBtn" 
+        class="absolute top-3 right-3 text-black hover:text-gray-700 text-2xl"
+      >
+        &times;
+      </button>
+      <h2 class="text-2xl font-bold mb-4 text-center">Reservation</h2>
+      <form name="reservation" class="space-y-4" netlify>
+        <input type="hidden" name="form-name" value="reservation" />
+        <div>
+          <label for="name" class="block mb-1">Name</label>
+          <input type="text" id="name" name="name" required class="w-full p-2 border rounded" />
+        </div>
+        <div>
+          <label for="phone" class="block mb-1">Phone</label>
+          <input type="text" id="phone" name="phone" required class="w-full p-2 border rounded" />
+        </div>
+        <div>
+          <label for="date" class="block mb-1">Date</label>
+          <input type="date" id="date" name="date" required class="w-full p-2 border rounded" />
+        </div>
+        <div>
+          <label for="time" class="block mb-1">Time</label>
+          <input type="time" id="time" name="time" required class="w-full p-2 border rounded" />
+        </div>
+        <div>
+          <label for="guests" class="block mb-1">Number of Guests</label>
+          <input type="number" id="guests" name="guests" required class="w-full p-2 border rounded" />
+        </div>
+        <div class="text-center mt-4">
+          <button 
+            type="submit" 
+            class="bg-gold text-black py-2 px-4 rounded hover:bg-lightGold transition"
+          >
+            Confirm
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 `;
 
 // JavaScript for Smooth Scrolling and Current Year
@@ -216,5 +271,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+const openModalBtn = document.getElementById('openModalBtn');
+const bookingModal = document.getElementById('bookingModal');
+const closeModalBtn = document.getElementById('closeModalBtn');
+
+if (openModalBtn && bookingModal && closeModalBtn) {
+  openModalBtn.addEventListener('click', () => {
+    bookingModal.classList.remove('hidden');
+  });
+
+  closeModalBtn.addEventListener('click', () => {
+    bookingModal.classList.add('hidden');
+  });
+
+  bookingModal.addEventListener('click', (e) => {
+    if (e.target === bookingModal) {
+      bookingModal.classList.add('hidden');
+    }
+  });
+}
 
 console.log('Website is running!');
