@@ -48,14 +48,14 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <span>041-2289289</span>
     </p>
     </div>
-      <!-- div class="mt-4">
+      <div class="mt-4">
         <button 
           id="openModalBtn"
           class="inline-block bg-gold text-black py-2 px-4 rounded-md hover:bg-lightGold transition"
         >
           Book Now
         </button>
-      </div -->
+      </div>
   </div>
 </section>
 
@@ -183,39 +183,42 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         &times;
       </button>
       <h2 class="text-2xl font-bold mb-4 text-center">Reservation</h2>
-      <form name="reservation" class="space-y-4" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="reservation" />
-         <input type="hidden" name="subject" 
-  value="Restaurant booking from %{formName}" />
-        <div>
-          <label for="name" class="block mb-1">Name</label>
-          <input type="text" id="name" name="name" required class="w-full p-2 border rounded" />
-        </div>
-        <div>
-          <label for="phone" class="block mb-1">Phone</label>
-          <input type="text" id="phone" name="phone" required class="w-full p-2 border rounded" />
-        </div>
-        <div>
-          <label for="date" class="block mb-1">Date</label>
-          <input type="date" id="date" name="date" required class="w-full p-2 border rounded" />
-        </div>
-        <div>
-          <label for="time" class="block mb-1">Time</label>
-          <input type="time" id="time" name="time" required class="w-full p-2 border rounded" />
-        </div>
-        <div>
-          <label for="guests" class="block mb-1">Number of Guests</label>
-          <input type="number" id="guests" name="guests" required class="w-full p-2 border rounded" />
-        </div>
-        <div class="text-center mt-4">
-          <button 
-            type="submit" 
-            class="bg-gold text-black py-2 px-4 rounded hover:bg-lightGold transition"
-          >
-            Confirm
-          </button>
-        </div>
-      </form>
+     <form id="bookingForm" class="space-y-4">
+  <div>
+    <label for="name" class="block mb-1">Name</label>
+    <input type="text" id="name" name="name" required class="w-full p-2 border rounded" />
+  </div>
+  <div>
+    <label for="phone" class="block mb-1">Phone</label>
+    <input type="text" id="phone" name="phone" required class="w-full p-2 border rounded" />
+  </div>
+  <div>
+    <label for="date" class="block mb-1">Date</label>
+    <input type="date" id="date" name="date" required class="w-full p-2 border rounded" />
+  </div>
+  <div>
+    <label for="time" class="block mb-1">Time</label>
+    <input type="time" id="time" name="time" required class="w-full p-2 border rounded" />
+  </div>
+  <div>
+    <label for="guests" class="block mb-1">Number of Guests</label>
+    <input type="number" id="guests" name="guests" required class="w-full p-2 border rounded" />
+  </div>
+  
+  <!-- Honeypot Field for Spam Prevention -->
+  <div style="display: none;">
+    <input type="text" id="honeypot" name="honeypot" />
+  </div>
+
+  <div class="text-center mt-4">
+    <button 
+      type="submit" 
+      class="bg-gold text-black py-2 px-4 rounded hover:bg-lightGold transition"
+    >
+      Confirm Booking
+    </button>
+  </div>
+</form>
     </div>
   </div>
 `;
@@ -264,33 +267,64 @@ if (drinkContainer) {
   drinkContainer.innerHTML = renderDrinkMenu(drinkMenuData);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const video = document.querySelector('video');
-  if (video) {
-    // video.muted = true; // Ensure it's muted
-    video.play().catch((error) => {
-      console.error('Autoplay failed:', error);
+document.addEventListener("DOMContentLoaded", () => {
+  const openModalBtn = document.getElementById("openModalBtn");
+  const bookingModal = document.getElementById("bookingModal");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+  const bookingForm = document.getElementById("bookingForm");
+
+  if (openModalBtn && bookingModal && closeModalBtn) {
+    openModalBtn.addEventListener("click", () => {
+      bookingModal.classList.remove("hidden");
+    });
+
+    closeModalBtn.addEventListener("click", () => {
+      bookingModal.classList.add("hidden");
+    });
+
+    bookingModal.addEventListener("click", (e) => {
+      if (e.target === bookingModal) {
+        bookingModal.classList.add("hidden");
+      }
+    });
+  }
+
+  // Form submission handling
+  if (bookingForm) {
+    bookingForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      // Spam Prevention: Check honeypot field
+      const honeypotField = document.getElementById("honeypot") as HTMLInputElement;
+      if (honeypotField && honeypotField.value) {
+        alert("Spam detected!");
+        return;
+      }
+
+      const formData = new FormData(bookingForm as HTMLFormElement);
+      const data = Object.fromEntries(formData);
+
+      try {
+        const response = await fetch("/.netlify/functions/send-booking", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+          alert("Booking request sent!");
+          if (bookingModal) {
+            bookingModal.classList.add("hidden");
+          }
+        } else {
+          alert("Something went wrong. Try again.");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("Error sending booking request.");
+      }
     });
   }
 });
-const openModalBtn = document.getElementById('openModalBtn');
-const bookingModal = document.getElementById('bookingModal');
-const closeModalBtn = document.getElementById('closeModalBtn');
-
-if (openModalBtn && bookingModal && closeModalBtn) {
-  openModalBtn.addEventListener('click', () => {
-    bookingModal.classList.remove('hidden');
-  });
-
-  closeModalBtn.addEventListener('click', () => {
-    bookingModal.classList.add('hidden');
-  });
-
-  bookingModal.addEventListener('click', (e) => {
-    if (e.target === bookingModal) {
-      bookingModal.classList.add('hidden');
-    }
-  });
-}
 
 console.log('Website is running!');
