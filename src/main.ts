@@ -305,7 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = Object.fromEntries(formData);
 
       try {
-        const response = await fetch("/.netlify/functions/send-booking", {
+        const response = await fetch("/api/send-booking", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
