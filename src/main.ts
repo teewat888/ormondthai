@@ -48,14 +48,14 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <span>041-2289289</span>
     </p>
     </div>
-      <div class="mt-4">
+      <!-- div class="mt-4">
         <button 
           id="openModalBtn"
           class="inline-block bg-gold text-black py-2 px-4 rounded-md hover:bg-lightGold transition"
         >
           Book Now
         </button>
-      </div>
+      </div -->
   </div>
 </section>
 
@@ -190,7 +190,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   </div>
   <div>
     <label for="phone" class="block mb-1">Phone</label>
-    <input type="text" id="phone" name="phone" required class="w-full p-2 border rounded" />
+    <input type="number" id="phone" name="phone" required class="w-full p-2 border rounded" />
   </div>
   <div>
     <label for="date" class="block mb-1">Date</label>
