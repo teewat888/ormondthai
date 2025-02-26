@@ -25,7 +25,7 @@ export default async (request, context) => {
 
     await resend.emails.send({
       from: 'no-reply@phayathai.com.au',
-      to: 'teewat@gmail.com',
+      to: 'Chaophayathai@gmail.com',
       subject: 'New Table Booking Request',
       html: `
         <h2>New Booking Request</h2>
