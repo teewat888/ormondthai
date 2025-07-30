@@ -109,10 +109,25 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <section id="gallery" class="py-20 bg-gray-900 text-gray-200 text-center">
   <div class="container mx-auto mb-10">
     <h2 class="text-4xl font-bold text-gold mb-8 ">Gallery</h2>
-    <video autoplay playsinline loop controls width="80%" class="mx-auto rounded-lg">
-      <source src="/pyt.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+ <div class="relative">
+  <video
+    id="photoslideVideo"
+    controls
+    playsinline
+    loop
+     preload="auto"
+     poster="/phd.png"
+    width="80%"
+    class="mx-auto rounded-lg"
+  >
+    <source src="/photoslide.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <audio id="photoslideMusic" loop>
+    <source src="/music-looped.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+</div>
   </div>
   </section>
 
@@ -268,6 +283,40 @@ if (drinkContainer) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const video = document.getElementById("photoslideVideo") as HTMLVideoElement | null;
+  const audio = document.getElementById("photoslideMusic") as HTMLAudioElement | null;
+
+  if (!video || !audio) return;
+  audio.loop = true;
+  audio.play().catch((e) => console.warn("Autoplay blocked:", e));
+  video.addEventListener("play", () => {
+    audio.currentTime = video.currentTime;
+    audio.play().catch((err) => {
+      console.warn("Autoplay blocked:", err);
+    });
+  });
+
+  video.addEventListener("pause", () => {
+    audio.pause();
+  });
+
+  video.addEventListener("seeking", () => {
+    audio.currentTime = video.currentTime;
+  });
+
+  video.addEventListener("timeupdate", () => {
+    if (Math.abs(audio.currentTime - video.currentTime) > 0.3) {
+      audio.currentTime = video.currentTime;
+    }
+  });
+
+  // video.addEventListener("ended", () => {
+  //   audio.pause();
+  // });
+  // audio.addEventListener("ended", () => {
+  //   audio.currentTime = 0;
+  //   audio.play();
+  // });
   const openModalBtn = document.getElementById("openModalBtn");
   const bookingModal = document.getElementById("bookingModal");
   const closeModalBtn = document.getElementById("closeModalBtn");
