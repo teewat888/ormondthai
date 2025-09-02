@@ -1,7 +1,7 @@
+// main.ts
 import { renderAboutUs } from './scripts/content';
 import { renderBanquetMenu, renderMenu } from './scripts/menu';
 import { injectMetaTags } from './scripts/meta';
-// import { takeawayMenu } from './data/menuItems-takeaway';
 import { dineInMenu } from './data/menuItems-dine-in';
 import './style.css';
 import { banquetMenu } from './data/banquet-menu';
@@ -9,7 +9,87 @@ import { takeawayMenu } from './data/menuItems-takeaway';
 import { renderDrinkMenu } from './scripts/drinkMenu';
 import { drinkMenuData } from './data/menuItems-drink';
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+/* ===========================
+   Preview Gate Configuration
+   ===========================
+   Toggle this to go live without password:
+*/
+const GO_LIVE = false; // <-- set to true to disable password gate entirely
+
+// Use EITHER a plain password OR a hash (leave the other empty)
+const PLAIN_PASSWORD = 'yaa'; // easiest: set your password here
+const PASSWORD_HASH = ''; // optional: SHA-256 hex of your password if you prefer not to store it in plain text
+
+// Per-tab auth memory (use localStorage if you want persistence across tabs)
+const AUTH_KEY = 'ot_auth_ok';
+
+// Small helper for hash mode
+async function sha256Hex(s: string) {
+  const enc = new TextEncoder();
+  const buf = await crypto.subtle.digest('SHA-256', enc.encode(s));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+/* ===========================
+   Gate UI
+   =========================== */
+function showGate() {
+  const root = document.querySelector<HTMLDivElement>('#app')!;
+  root.innerHTML = `
+    <section class="min-h-screen flex items-center justify-center bg-black text-gray-100">
+      <div class="w-full max-w-sm p-6 rounded-xl bg-gray-900 shadow-lg">
+        <h1 class="text-2xl font-bold text-gold mb-4 text-center">Ormond Thai — Preview</h1>
+        <p class="text-sm text-gray-400 mb-4 text-center">Enter preview password</p>
+        <form id="gateForm" class="space-y-3">
+          <input id="gatePwd" type="password" class="w-full p-2 rounded bg-gray-800 border border-gray-700 focus:outline-none" placeholder="Password" />
+          <button type="submit" class="w-full bg-gold text-black py-2 rounded hover:bg-lightGold transition">Enter</button>
+          <p id="gateErr" class="text-red-400 text-sm h-5"></p>
+        </form>
+      </div>
+    </section>
+  `;
+
+  const form = document.getElementById('gateForm') as HTMLFormElement;
+  const pwdInput = document.getElementById('gatePwd') as HTMLInputElement;
+  const err = document.getElementById('gateErr') as HTMLParagraphElement;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const input = (pwdInput.value || '').trim();
+
+    try {
+      // Plain mode
+      if (PLAIN_PASSWORD) {
+        if (input === PLAIN_PASSWORD) {
+          sessionStorage.setItem(AUTH_KEY, '1');
+          renderSite();
+          return;
+        }
+      } else if (PASSWORD_HASH) {
+        // Hash mode
+        const hex = await sha256Hex(input);
+        if (hex === PASSWORD_HASH) {
+          sessionStorage.setItem(AUTH_KEY, '1');
+          renderSite();
+          return;
+        }
+      } else {
+        console.warn('No password configured. Set PLAIN_PASSWORD or PASSWORD_HASH.');
+      }
+      err.textContent = 'Incorrect password';
+    } catch (ex) {
+      console.error(ex);
+      err.textContent = 'Error verifying password';
+    }
+  });
+}
+
+/* ===========================
+   Your Site Render
+   =========================== */
+function renderSite() {
+  // -- Your original content starts here --
+  document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <!-- Hero Section -->
 <section id="hero" class="h-screen bg-gradient-to-r from-black via-gray-900 to-black text-white flex flex-col justify-center items-center">
   <!-- Logo -->
@@ -238,142 +318,152 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   </div>
 `;
 
-// JavaScript for Smooth Scrolling and Current Year
-const menuLinks = document.querySelectorAll('.menu-link');
-const currentYearElement = document.getElementById('current-year');
+  // JavaScript for Smooth Scrolling and Current Year
+  const menuLinks = document.querySelectorAll('.menu-link');
+  const currentYearElement = document.getElementById('current-year');
 
-// Smooth scrolling for menu links
-menuLinks.forEach((link) => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-    const targetId = link.getAttribute('href')!.substring(1);
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) {
-      targetSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-});
-
-// Update footer with the current year
-if (currentYearElement) {
-  currentYearElement.textContent = new Date().getFullYear().toString();
-}
-
-// Call this function at the start of your script
-injectMetaTags();
-// Render
-renderAboutUs();
-const dineInContainer = document.getElementById('dine-in-menu');
-const takeawayContainer = document.getElementById('takeaway-menu');
-const banquetContainer = document.getElementById('banquet-menu');
-const drinkContainer = document.getElementById('drink-menu');
-
-if (dineInContainer) {
-  dineInContainer.innerHTML = renderMenu(dineInMenu);
-}
-if (takeawayContainer) {
-  takeawayContainer.innerHTML = renderMenu(takeawayMenu);
-}
-if (banquetContainer) {
-  banquetContainer.innerHTML = renderBanquetMenu(banquetMenu);
-}
-
-if (drinkContainer) {
-  drinkContainer.innerHTML = renderDrinkMenu(drinkMenuData);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const video = document.getElementById("photoslideVideo") as HTMLVideoElement | null;
-  const audio = document.getElementById("photoslideMusic") as HTMLAudioElement | null;
-
-  if (!video || !audio) return;
-  audio.loop = true;
-  audio.play().catch((e) => console.warn("Autoplay blocked:", e));
-  video.addEventListener("play", () => {
-    audio.currentTime = video.currentTime;
-    audio.play().catch((err) => {
-      console.warn("Autoplay blocked:", err);
-    });
-  });
-
-  video.addEventListener("pause", () => {
-    audio.pause();
-  });
-
-  video.addEventListener("seeking", () => {
-    audio.currentTime = video.currentTime;
-  });
-
-  video.addEventListener("timeupdate", () => {
-    if (Math.abs(audio.currentTime - video.currentTime) > 0.3) {
-      audio.currentTime = video.currentTime;
-    }
-  });
-
-  // video.addEventListener("ended", () => {
-  //   audio.pause();
-  // });
-  // audio.addEventListener("ended", () => {
-  //   audio.currentTime = 0;
-  //   audio.play();
-  // });
-  const openModalBtn = document.getElementById("openModalBtn");
-  const bookingModal = document.getElementById("bookingModal");
-  const closeModalBtn = document.getElementById("closeModalBtn");
-  const bookingForm = document.getElementById("bookingForm");
-
-  if (openModalBtn && bookingModal && closeModalBtn) {
-    openModalBtn.addEventListener("click", () => {
-      bookingModal.classList.remove("hidden");
-    });
-
-    closeModalBtn.addEventListener("click", () => {
-      bookingModal.classList.add("hidden");
-    });
-
-    bookingModal.addEventListener("click", (e) => {
-      if (e.target === bookingModal) {
-        bookingModal.classList.add("hidden");
-      }
-    });
-  }
-
-  // Form submission handling
-  if (bookingForm) {
-    bookingForm.addEventListener("submit", async (event) => {
+  // Smooth scrolling for menu links
+  menuLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
       event.preventDefault();
-
-      // Spam Prevention: Check honeypot field
-      const honeypotField = document.getElementById("honeypot") as HTMLInputElement;
-      if (honeypotField && honeypotField.value) {
-        alert("Spam detected!");
-        return;
-      }
-
-      const formData = new FormData(bookingForm as HTMLFormElement);
-      const data = Object.fromEntries(formData);
-
-      try {
-        const response = await fetch("https://phayathai.com.au/.netlify/functions/send-booking", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
-
-        if (response.ok) {
-          alert("Booking request sent!");
-          if (bookingModal) {
-            bookingModal.classList.add("hidden");
-          }
-        } else {
-          alert("Something went wrong. Try again.");
-        }
-      } catch (error) {
-        console.error("Error:", error);
-        alert("Error sending booking request.");
+      const targetId = link.getAttribute('href')!.substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
       }
     });
-  }
-});
+  });
 
-console.log('Website is running!');
+  // Update footer with the current year
+  if (currentYearElement) {
+    currentYearElement.textContent = new Date().getFullYear().toString();
+  }
+
+  // Call this function at the start of your script
+  injectMetaTags();
+  // Render
+  renderAboutUs();
+  const dineInContainer = document.getElementById('dine-in-menu');
+  const takeawayContainer = document.getElementById('takeaway-menu');
+  const banquetContainer = document.getElementById('banquet-menu');
+  const drinkContainer = document.getElementById('drink-menu');
+
+  if (dineInContainer) {
+    dineInContainer.innerHTML = renderMenu(dineInMenu);
+  }
+  if (takeawayContainer) {
+    takeawayContainer.innerHTML = renderMenu(takeawayMenu);
+  }
+  if (banquetContainer) {
+    banquetContainer.innerHTML = renderBanquetMenu(banquetMenu);
+  }
+
+  if (drinkContainer) {
+    drinkContainer.innerHTML = renderDrinkMenu(drinkMenuData);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const video = document.getElementById("photoslideVideo") as HTMLVideoElement | null;
+    const audio = document.getElementById("photoslideMusic") as HTMLAudioElement | null;
+
+    if (!video || !audio) return;
+    audio.loop = true;
+    audio.play().catch((e) => console.warn("Autoplay blocked:", e));
+    video.addEventListener("play", () => {
+      audio.currentTime = video.currentTime;
+      audio.play().catch((err) => {
+        console.warn("Autoplay blocked:", err);
+      });
+    });
+
+    video.addEventListener("pause", () => {
+      audio.pause();
+    });
+
+    video.addEventListener("seeking", () => {
+      audio.currentTime = video.currentTime;
+    });
+
+    video.addEventListener("timeupdate", () => {
+      if (Math.abs(audio.currentTime - video.currentTime) > 0.3) {
+        audio.currentTime = video.currentTime;
+      }
+    });
+
+    const openModalBtn = document.getElementById("openModalBtn");
+    const bookingModal = document.getElementById("bookingModal");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+    const bookingForm = document.getElementById("bookingForm");
+
+    if (openModalBtn && bookingModal && closeModalBtn) {
+      openModalBtn.addEventListener("click", () => {
+        bookingModal.classList.remove("hidden");
+      });
+
+      closeModalBtn.addEventListener("click", () => {
+        bookingModal.classList.add("hidden");
+      });
+
+      bookingModal.addEventListener("click", (e) => {
+        if (e.target === bookingModal) {
+          bookingModal.classList.add("hidden");
+        }
+      });
+    }
+
+    // Form submission handling
+    if (bookingForm) {
+      bookingForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        // Spam Prevention: Check honeypot field
+        const honeypotField = document.getElementById("honeypot") as HTMLInputElement;
+        if (honeypotField && honeypotField.value) {
+          alert("Spam detected!");
+          return;
+        }
+
+        const formData = new FormData(bookingForm as HTMLFormElement);
+        const data = Object.fromEntries(formData);
+
+        try {
+          const response = await fetch("https://phayathai.com.au/.netlify/functions/send-booking", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+          });
+
+          if (response.ok) {
+            alert("Booking request sent!");
+            if (bookingModal) {
+              bookingModal.classList.add("hidden");
+            }
+          } else {
+            alert("Something went wrong. Try again.");
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          alert("Error sending booking request.");
+        }
+      });
+    }
+  });
+
+  console.log('Website is running!');
+  // -- Your original content ends here --
+}
+
+/* ===========================
+   Boot
+   =========================== */
+(function boot() {
+  if (GO_LIVE) {
+    renderSite();
+    return;
+  }
+  if (sessionStorage.getItem(AUTH_KEY) === '1') {
+    renderSite();
+  } else {
+    showGate();
+  }
+})();
