@@ -17,7 +17,7 @@ import { drinkMenuData } from './data/menuItems-drink';
 const GO_LIVE = false; // <-- set to true to disable password gate entirely
 
 // Use EITHER a plain password OR a hash (leave the other empty)
-const PLAIN_PASSWORD = 'yaa'; // easiest: set your password here
+const PLAIN_PASSWORD = 'ormond1'; // easiest: set your password here
 const PASSWORD_HASH = ''; // optional: SHA-256 hex of your password if you prefer not to store it in plain text
 
 // Per-tab auth memory (use localStorage if you want persistence across tabs)
