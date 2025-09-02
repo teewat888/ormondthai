@@ -3,14 +3,14 @@ export const metaTags = [
   {
     name: 'description',
     content:
-      'Experience the finest Thai cuisine in Blackburn, Victoria. Phaya Thai Restaurant offers authentic Thai dishes made with fresh ingredients and traditional recipes.',
+      'Experience the finest Thai cuisine in Ormond, Victoria. Ormond Thai Restaurant offers authentic Thai dishes made with fresh ingredients and traditional recipes.',
   },
   {
     name: 'keywords',
     content:
-      'Thai Restaurant, Blackburn Victoria, Authentic Thai Food, Phaya Thai Restaurant, Thai Cuisine, Thai Food Blackburn, Best Thai Restaurant in Blackburn',
+      'Thai Restaurant, Ormond Victoria, Authentic Thai Food, Ormond Thai Restaurant, Thai Cuisine, Thai Food Ormond, Best Thai Restaurant in Ormond',
   },
-  { name: 'author', content: 'Phaya Thai Restaurant' },
+  { name: 'author', content: 'Ormond Thai Restaurant' },
   { charset: 'UTF-8' },
   { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
 
@@ -18,15 +18,15 @@ export const metaTags = [
   {
     property: 'og:title',
     content:
-      'Phaya Thai Restaurant - Authentic Thai Food in Blackburn, Victoria',
+      'Ormond Thai Restaurant - Authentic Thai Food in Ormond, Victoria',
   },
   {
     property: 'og:description',
     content:
-      'Discover the taste of authentic Thai cuisine at Phaya Thai Restaurant in Blackburn, Victoria. Fresh ingredients, traditional recipes, and exceptional service await you.',
+      'Discover the taste of authentic Thai cuisine at Ormond Thai Restaurant in Ormond, Victoria. Fresh ingredients, traditional recipes, and exceptional service await you.',
   },
-  { property: 'og:image', content: 'https://phayathai.com.au/logo.png' }, // Replace with actual logo URL
-  { property: 'og:url', content: 'https://phayathai.com.au' },
+  { property: 'og:image', content: 'https://Ormondthai.com.au/logo.png' }, // Replace with actual logo URL
+  { property: 'og:url', content: 'https://Ormondthai.com.au' },
   { property: 'og:type', content: 'restaurant' },
   { property: 'og:locale', content: 'en_AU' }, // English (Australia)
 
@@ -35,27 +35,27 @@ export const metaTags = [
   {
     name: 'twitter:title',
     content:
-      'Phaya Thai Restaurant - Authentic Thai Food in Blackburn, Victoria',
+      'Ormond Thai Restaurant - Authentic Thai Food in Ormond, Victoria',
   },
   {
     name: 'twitter:description',
     content:
-      'Explore the authentic flavors of Thailand at Phaya Thai Restaurant in Blackburn. Perfect for family dinners, takeaways, or special occasions.',
+      'Explore the authentic flavors of Thailand at Ormond Thai Restaurant in Ormond. Perfect for family dinners, takeaways, or special occasions.',
   },
-  { name: 'twitter:image', content: 'https://phayathai.com.au/logo.png' }, // Replace with actual logo URL
+  { name: 'twitter:image', content: 'https://Ormondthai.com.au/logo.png' }, // Replace with actual logo URL
 
   // Local Business Meta Tags (Schema.org Microdata)
   {
     property: 'business:contact_data:street_address',
-    content: '6/96 Canterbury Road',
+    content: '475 North Road',
   },
-  { property: 'business:contact_data:locality', content: 'Blackburn South' },
+  { property: 'business:contact_data:locality', content: 'Ormond' },
   { property: 'business:contact_data:region', content: 'Victoria' },
-  { property: 'business:contact_data:postal_code', content: '3130' },
+  { property: 'business:contact_data:postal_code', content: '3204' },
   { property: 'business:contact_data:country_name', content: 'Australia' },
 
   // Geo Meta Tags (Optional but helpful for local SEO)
   { name: 'geo.position', content: '-37.834,145.150' }, // Replace with exact latitude and longitude of the restaurant
-  { name: 'geo.placename', content: 'Blackburn South, Victoria' },
+  { name: 'geo.placename', content: 'Ormond, Victoria' },
   { name: 'geo.region', content: 'AU-VIC' }, // Australia (Victoria)
 ];

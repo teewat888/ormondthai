@@ -14,7 +14,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <section id="hero" class="h-screen bg-gradient-to-r from-black via-gray-900 to-black text-white flex flex-col justify-center items-center">
   <!-- Logo -->
   <div class="flex flex-col items-center text-center">
-    <img src="/logo.png" alt="Phaya Thai Logo" class="h-auto w-auto mb-4" />
+    <img src="/logo.png" alt="Ormond Thai Logo" class="h-auto w-auto mb-4" />
    
   </div>
     <!-- Contact Details -->
@@ -30,32 +30,32 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   </a>
 </div -->
 <div class="container mx-auto text-center text-lightGold font-roboto">
-    <h3 class="text-4xl font-bold text-gold mb-8 font-roboto"><a href='#about'>www.PhayaThai.com.au</a></h3>
+    <h3 class="text-4xl font-bold text-gold mb-8 font-roboto"><a href='#about'>www.OrmondThai.com.au</a></h3>
     <p class="text-md font-roboto">Open 7 day a week from 5.00 pm to 10.00 pm</p>
-    <p class="text-md font-roboto">Shop: 6/96 Canterbury Road</p>
-    <p class="text-md font-roboto">Blackburn South VIC 3130</p>
+    <p class="text-md font-roboto">475 North Road</p>
+    <p class="text-md font-roboto">Ormond VIC 3204</p>
     <p class="text-md font-roboto flex justify-center items-center space-x-2">
      Visit on &nbsp;<a href="#"><img src="/fb-logo.png" alt="facebook" class="h-6 w-auto" /></a>
-      <span>Phaya Thai restaurant</span>
+      <span>Ormond Thai restaurant</span>
     </p>
     <div class='flex justify-center items-center space-x-2'>
     <p class="text-md font-roboto flex justify-center items-center space-x-2">
       <i class="fas fa-phone-alt text-gold text-xl"></i>
-      <span>(03) 9894 3819</span>
+      <span>041-2289289</span>
     </p>
     <p class="text-md font-roboto flex justify-center items-center space-x-2">
       <i class="fas fa-mobile-alt text-gold text-xl"></i>
-      <span>041-2289289</span>
+      <span>041-3965456</span>
     </p>
     </div>
-      <div class="mt-4">
+      <!-- div class="mt-4">
         <button 
           id="openModalBtn"
           class="inline-block bg-gold text-black py-2 px-4 rounded-md hover:bg-lightGold transition"
         >
           Book Now
         </button>
-      </div>
+      </div -->
   </div>
 </section>
 
@@ -66,7 +66,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <a href="#about" class="hover:text-gold transition menu-link whitespace-nowrap">About Us</a>
     <a href="#food-banquet-menu" class="hover:text-gold transition menu-link">Menu</a>
      <a href="#gallery" class="hover:text-gold transition menu-link">Gallery</a>
-     <a href="#team" class="hover:text-gold transition menu-link">Team</a>
+     <!--a href="#team" class="hover:text-gold transition menu-link">Team</a-->
     <a href="#contact" class="hover:text-gold transition menu-link">Contact Us</a>
   </div>
 </nav>
@@ -93,12 +93,12 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <div id="dine-in-menu" class="mx-4 md:mx-auto"></div>
   </div>
 </section>
-<section id="food-drink-menu" class="py-20 bg-gray-900 text-gray-300">
+<!-- section id="food-drink-menu" class="py-20 bg-gray-900 text-gray-300">
   <div class="container mx-auto">
     <h2 class="text-4xl font-bold text-gold text-center mb-12 ">Drink Menu</h2>
     <div id="drink-menu" class="mx-4 md:mx-auto"></div>
   </div>
-</section>
+</section -->
 <section id="food-takeaway-menu" class="py-20 bg-gray-900 text-gray-300">
   <div class="container mx-auto">
     <h2 class="text-4xl font-bold text-gold text-center mb-12 ">Takeaway Menu</h2>
@@ -132,12 +132,12 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   </section>
 
 <!-- Team Section -->
-<section id="team" class="py-20 bg-gradient-to-r from-gray-400 via-gray-300 to-gray-400 text-gray-800">
+<!-- section id="team" class="py-20 bg-gradient-to-r from-gray-400 via-gray-300 to-gray-400 text-gray-800">
   <div class="container mx-auto">
     <h2 class="text-4xl font-bold text-gold text-center mb-12">Team</h2>
     <div class="flex flex-col md:flex-row flex-wrap justify-center gap-8">
       <!-- Tula -->
-      <div class="group text-center cursor-pointer w-full md:w-1/3">
+      <!-- div class="group text-center cursor-pointer w-full md:w-1/3">
         <div class="relative">
           <img
             src="/tula.png"
@@ -145,9 +145,9 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
             class="w-full rounded-lg bg-white shadow-lg transform transition-transform duration-300 scale-95 group-hover:scale-100"
           />
         </div>
-      </div>
+      </div -->
       <!-- Maticka -->
-      <div class="group text-center cursor-pointer w-full md:w-1/3">
+      <!--div class="group text-center cursor-pointer w-full md:w-1/3">
         <div class="relative">
           <img
             src="/maticka.png"
@@ -155,9 +155,9 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
             class="w-full rounded-lg bg-white shadow-lg transform transition-transform duration-300 scale-95 group-hover:scale-100"
           />
         </div>
-      </div>
+      </div -->
       <!-- Phijira -->
-      <div class="group text-center cursor-pointer w-full md:w-1/3">
+      <!-- div class="group text-center cursor-pointer w-full md:w-1/3">
         <div class="relative">
           <img
             src="/phijira.png"
@@ -166,24 +166,24 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
           />
         </div>
       </div>
-    </div>
+    </div -->
   </div>
-</section>
+</section -->
   
 <!-- Contact Section -->
 <section id="contact" class="py-20 bg-gray-900 text-gray-200 text-center">
   <div class="container mx-auto">
     <h2 class="text-4xl font-bold text-gold mb-8 ">Contact Us</h2>
-    <p class="text-lg">Shop 6/96 Canterbury Road, Blackburn South VIC 3130</p>
-    <p class="text-lg">Phone: (03) 9894 3819</p>
-    <p class="text-lg">Mobile: 041-2 289 289</p>
+    <p class="text-lg">475 North Road, Ormond VIC 3204</p>
+    <p class="text-lg">Phone: 041-2289289</p>
+    <p class="text-lg">Mobile: 041-3965456</p>
     <!-- p class="text-lg">Email: info@phayathai.com.au</p -->
   </div>
 </section>
 
 <!-- Footer -->
 <footer class="bg-black text-gray-400 py-4 text-center">
-  <p class='font-roboto'>&copy; <span id="current-year"></span> Phaya Thai Restaurant. All rights reserved.</p>
+  <p class='font-roboto'>&copy; <span id="current-year"></span> Ormond Thai Restaurant. All rights reserved.</p>
 </footer>
  <!-- Modal -->
   <div 

@@ -24,7 +24,7 @@ export default async (request, context) => {
     const resend = new Resend(process.env.RESEND_API_KEY); // Load API key from Netlify env
 
     await resend.emails.send({
-      from: 'no-reply@phayathai.com.au',
+      from: 'no-reply@ormondthai.com.au',
       to: 'Chaophayathai@gmail.com',
       subject: 'New Table Booking Request',
       html: `

@@ -2,19 +2,19 @@ export const dineInMenu = [
   {
     category: 'Entrée',
     categoryNumber: 1,
-    categoryWideOptions: [{ type: 'Vegetable', price: 10.95 }],
+    categoryWideOptions: [{ type: 'Vegetable', price: 12.95 }],
     items: [
       {
         number: 1,
         name: 'Spring Roll (5 pieces)',
-        price: 12.95,
+        price: 14.95,
         description:
           'Thai style spring rolls gently stuffed with minced chicken & vegetables deep-fried. Served with sweet chili sauce.',
       },
       {
         number: 2,
         name: 'Curry Puffs (5 pieces)',
-        price: 12.95,
+        price: 14.95,
         description:
           'A tasty puff consisting of minced chicken & vegetables, curry flavored served with sweet chili sauce.',
       },
@@ -28,35 +28,35 @@ export const dineInMenu = [
       {
         number: 4,
         name: 'Chicken Satay (4 pieces)',
-        price: 14.95,
+        price: 18.95,
         description:
           'Marinated breast chicken fillets served with Thai-style peanut sauce.',
       },
       {
         number: 5,
         name: 'Fish Cake (5 pieces)',
-        price: 14.95,
+        price: 18.95,
         description:
           'Thai fish cakes served with sweet chili sauce, sliced cucumber, and crushed peanuts.',
       },
       {
         number: 6,
         name: 'Golden Bags (5 pieces)',
-        price: 14.95,
+        price: 18.95,
         description:
           'Minced chicken and prawns marinated and wrapped in spring roll pastry. Served with sweet chili sauce.',
       },
       {
         number: 7,
         name: 'Goong Tod (5 pieces)',
-        price: 14.95,
+        price: 18.95,
         description:
           'Delicious king prawns in a crispy batter, deep-fried golden brown, served with a lovely sweet chili sauce.',
       },
       {
         number: 8,
         name: 'Mixed Entrée (7 pieces)',
-        price: 16.95,
+        price: 20.95,
         description: 'Selections of above entrées (no.1, 2, 3, 5 & 6).',
       },
     ],
@@ -65,9 +65,9 @@ export const dineInMenu = [
     category: 'Soup',
     categoryNumber: 2,
     categoryWideOptions: [
-      { type: 'Vegetables', price: 10.95 },
-      { type: 'Chicken', price: 12.95 },
-      { type: 'Seafood', price: 14.95 },
+      { type: 'Vegetables', price: 12.95 },
+      { type: 'Chicken', price: 14.95 },
+      { type: 'Combination seafood', price: 18.95 },
     ],
     items: [
       {
@@ -85,7 +85,7 @@ export const dineInMenu = [
       {
         number: 11,
         name: 'Po Tak',
-        price: 16.95,
+        price: 22.95,
         description:
           'Combination seafood in spicy sour soup with Thai herbs and basil leaves.',
       },
@@ -95,8 +95,8 @@ export const dineInMenu = [
     category: 'Salad & Grill',
     categoryNumber: 3,
     categoryWideOptions: [
-      { type: 'Beef', price: 16.95 },
-      { type: 'Prawns/Calamari', price: 18.95 },
+      { type: 'Chicken/Beef', price: 23.95 },
+      { type: 'Prawns or Calamari', price: 26.95 },
     ],
     items: [
       {
@@ -108,35 +108,35 @@ export const dineInMenu = [
       {
         number: 13,
         name: 'Laab',
-        price: 16.95,
+        price: 23.95,
         description:
           'Spiced minced chicken salad cooked with lemon juice, herb, chili, and roasted ground rice.',
       },
       {
         number: 14,
         name: 'Nam Sod',
-        price: 16.95,
+        price: 23.95,
         description:
           'Minced chicken salad mixed with lemon juice, herbs, ginger, chili, and roasted peanuts.',
       },
       {
         number: 15,
         name: 'Yum Salad',
-        price: 16.95,
+        // price: 16.95,
         description:
           'Tender beef slices tossed with lemon juice, chili, mint, and crushed ground rice.',
       },
       {
         number: 16,
         name: 'Grilled Pork',
-        price: 19.95,
+        price: 26.95,
         description:
           'Thai-style marinated pork with palm sugar, coriander root, and black pepper. Served with dark soy caramel dipping sauce.',
       },
       {
         number: 17,
         name: 'Duck Salad',
-        price: 19.95,
+        price: 26.95,
         description:
           'Modern Thai salad consisting of roasted duck dressed with a special sauce and roasted peanuts.',
       },
@@ -146,9 +146,9 @@ export const dineInMenu = [
     category: 'Curries',
     categoryNumber: 4,
     categoryWideOptions: [
-      { type: 'Vegetable', price: 20.95 },
-      { type: 'Chicken/Beef', price: 22.95 },
-      { type: 'Prawns/Calamari', price: 24.95 },
+      { type: 'Vegetable', price: 23.95 },
+      { type: 'Chicken or Beef or Pork', price: 26.95 },
+      { type: 'Seafood', price: 29.95 },
     ],
     items: [
       {
@@ -166,35 +166,36 @@ export const dineInMenu = [
       {
         number: 20,
         name: 'Duck Curry',
-        price: 26.95,
+        price: 29.95,
         description:
           'Modern red curry with sliced roast duck fillet, lychee, pineapple, cherry tomato, and basil leaves.',
       },
+
       {
         number: 21,
-        name: 'Massaman Curry Beef (Lamb)',
-        price: 29.95,
-        description:
-          'Southern-style curry with beef in coconut milk, tamarind, potato, onion, and roasted peanuts.',
-      },
-      {
-        number: 22,
         name: 'Panang Curry',
         description:
           'Creamy spicy red curry slowly cooked in meat of your choice with vegetable, kefir lime, and basil leaves.',
       },
       {
-        number: 23,
+        number: 22,
         name: 'Yellow Curry',
         description:
           'Northern Thai-style spicy yellow curry in coconut milk with meat of your choice, potato, and onions.',
       },
       {
-        number: 24,
-        name: 'Gang Sup-pa-rod',
-        price: 28.95,
+        number: 23,
+        name: 'Massaman Curry Beef',
+        price: 29.95,
         description:
-          'Original Thai-style red curry cooked with pork belly, pineapple, onion, fried shallots, and spring onion.',
+          'Southern-style curry with beef in coconut milk, tamarind, potato, onion, and roasted peanuts.',
+      },
+      {
+
+        name: 'Masaman Lamb Shank',
+        price: 35.95,
+        description:
+          '',
       },
     ],
   },
@@ -202,47 +203,47 @@ export const dineInMenu = [
     category: 'Stir-Fries',
     categoryNumber: 5,
     categoryWideOptions: [
-      { type: 'Vegetable', price: 20.95 },
-      { type: 'Chicken/Beef/Pork', price: 22.95 },
-      { type: 'Seafood', price: 24.95 },
+      { type: 'Vegetable', price: 23.95 },
+      { type: 'Chicken or Beef or Pork', price: 26.95 },
+      { type: 'Seafood', price: 29.95 },
     ],
     items: [
       {
-        number: 25,
-        name: 'Pad Nam Mun Hoi',
+        number: 24,
+        name: 'Pad Ruommit',
         description:
           'Stir-fried meat of your choice in oyster sauce & vegetables.',
       },
       {
-        number: 26,
-        name: 'Pad Gratiem',
+        number: 25,
+        name: 'Beef Aroy',
         description:
-          'Stir-fried meat of your choice with garlic and black pepper in oyster sauce served on mixed salad.',
+          'Stir-fried meat with oyster sauce, garlic and black pepper served on top of broccoli.',
       },
       {
-        number: 27,
+        number: 26,
         name: 'Pad Peow Wan',
         description:
           'Thai-style sweet & sour stir-fried with vegetables and tomato sauce with meat of your choice.',
       },
       {
-        number: 28,
+        number: 27,
         name: 'Pad Khing',
         description:
           'Stir-fried with meat of your choice in oyster sauce with ginger & vegetables.',
       },
       {
-        number: 29,
+        number: 28,
         name: 'Pad Satay',
         description:
-          'Stir-fried with chef’s own satay sauce with meat of your choice & vegetables, topped with sesame seeds.',
+          'Stir-fried with chef’s own satay sauce with meat of your choice & vegetables top with sesame seeds.',
       },
-      {
-        number: 30,
-        name: 'Tofu Soung Keung',
-        description:
-          'Stir-fried minced chicken with tomato sauce, mushroom, capsicum, celery, and onion served on deep-fried soft tofu.',
-      },
+      // {
+      //   number: 30,
+      //   name: 'Tofu Soung Keung',
+      //   description:
+      //     'Stir-fried minced chicken with tomato sauce, mushroom, capsicum, celery, and onion served on deep-fried soft tofu.',
+      // },
     ],
   },
 
@@ -250,49 +251,49 @@ export const dineInMenu = [
     category: 'Hot Stir-Fries',
     categoryNumber: 6,
     categoryWideOptions: [
-      { type: 'Vegetable', price: 20.95 },
-      { type: 'Chicken/Beef/Pork', price: 22.95 },
-      { type: 'Prawns/Calamari', price: 24.95 },
+      { type: 'Vegetable', price: 23.95 },
+      { type: 'Chicken or Beef or Pork', price: 26.95 },
+      { type: 'Prawns or Calamari', price: 29.95 },
     ],
     items: [
       {
-        number: 31,
+        number: 29,
         name: 'Pad Ma Maung',
         description:
           'Stir-fried with chili paste, cashew nuts, and vegetables with meat of your choice.',
       },
       {
-        number: 32,
+        number: 30,
         name: 'Pad Kra Pao',
         description:
           'Spicy stir-fries with meat of your choice, sauce, fresh vegetables, chili, and basil leaves.',
       },
       {
-        number: 33,
+        number: 31,
         name: 'Pad Moo Pa',
-        price: 26.95,
+        // price: 26.95,
         description:
           'Stir-fried spicy red curry paste in coconut milk with meat of your choice, vegetables, basil leaves, peppercorn, and black pepper.',
       },
+      // {
+      //   number: 34,
+      //   name: 'Lamb Pirod',
+      //   price: 26.95,
+      //   description:
+      //     'Stir-fried spicy lamb dish with vegetables, black pepper, chili, Thai herbs, and basil leaves.',
+      // },
       {
-        number: 34,
-        name: 'Lamb Pirod',
-        price: 26.95,
-        description:
-          'Stir-fried spicy lamb dish with vegetables, black pepper, chili, Thai herbs, and basil leaves.',
-      },
-      {
-        number: 35,
+        number: 32,
         name: 'Chicken Lemongrass',
         description:
           'Stir-fried chicken with vegetables, black pepper, lemongrass, chili, and basil leaves.',
       },
       {
-        number: 36,
-        name: ' Pad Cha combination seafood',
-        price: 28.95,
+        number: 33,
+        name: ' Pad Cha',
+        // price: 28.95,
         description:
-          'Spicy stir-fried with vegetables and lots of Thai herbs in Lemon chilli sauce and basil leaves.',
+          'Spicy stir-fried with meat of your choice vegetables and lots of Thai herbs in Lemon chilli sauce and basil leaves.',
       },
     ],
   },
@@ -306,177 +307,208 @@ export const dineInMenu = [
     // ],
     items: [
       {
-        number: 37,
+        number: 34,
         name: 'Chili Prawns',
-        price: 24.95,
+        price: 35.95,
         description:
           'Stir-fried king prawns with special sweet chili sauce and vegetables, basil leaves.',
       },
       {
-        number: 38,
+        number: 35,
         name: 'Pad Talay',
-        price: 26.95,
+        price: 35.95,
         description:
           'Combination of seafood stir-fried with vegetables in green curry sauce and basil leaves.',
       },
       {
-        number: 39,
-        name: 'Pad Ruammit Goong',
-        price: 24.95,
+        number: 36,
+        name: 'Pad Cha',
+        price: 35.95,
         description:
-          'Stir-fried king prawn with snow peas, carrot, onion, baby corn, and mushrooms in oyster sauce.',
+          'Spicy stir-fried with vegetables and lots of Thai herbs in Lemon chilli sauce and basil leaves.',
+      },
+      {
+        number: 37,
+        name: 'Sam Kra Sat',
+        price: 35.95,
+        description:
+          'Crispy combination King prawn, calamari, chicken stir fried with veegetable, pineapple and cashew nuts in our chef special sauce.'
+      },
+      {
+        number: 38,
+        name: 'Chu Chee',
+        price: 35.95,
+        description:
+          'Traditional Thai taste king prawns or Barramundi fish fillet in spicy red curry sauce with vegetables, kefir lime, and basil leaves.',
+      },
+      {
+        number: 39,
+        name: 'Pla Sam Rod (Barramundi fillet)',
+        price: 35.95,
+        description:
+          'Deep-fried fish topped with special tamarind sauce, chopped vegetables, pineapple, basil leaves, and cashew nuts.',
       },
       {
         number: 40,
-        name: 'Chu Chee',
-        price: 24.95,
-        description:
-          'Stir-fried king prawns in spicy red curry sauce with vegetables, kefir lime, and basil leaves.',
-      },
-      {
-        number: 41,
-        name: 'Pla Sam Rod (Barramundi fillet)',
-        price: 26.95,
-        description:
-          'Deep-fried fish topped with special tamarind sauce, chopped vegetables, basil leaves, and cashew nuts.',
-      },
-      {
-        number: 42,
         name: 'Pla Rad Khing (Barramundi fillet)',
-        price: 26.95,
+        price: 35.95,
         description:
-          'Deep-fried fish topped with soy bean sauce, ginger, vegetables, and celery.',
+          'Steam fish fillet with soya bean, oyster sauce with ginger and vegetables. <br/> if you have any food allergies, please inform our staff.',
       },
-      {
-        number: -1,
-        name: 'Sam Kra Sat',
-        price: 28.95,
-        description:
-          'Crispy combination King prawn, calamari, chicken stir fried with veegetable, pineapple and cashew nuts in our chef special sauce.',
-      },
+      // {
+      //   number: -1,
+      //   name: 'Sam Kra Sat',
+      //   price: 28.95,
+      //   description:
+      //     'Crispy combination King prawn, calamari, chicken stir fried with veegetable, pineapple and cashew nuts in our chef special sauce.',
+      // },
     ],
   },
   {
     category: 'Rice & Noodle',
     categoryNumber: 8,
     categoryWideOptions: [
-      { type: 'Vegetable', price: 18.95 },
-      { type: 'Chicken/Beef/Pork', price: 20.95 },
-      { type: 'Prawns/Calamari', price: 22.95 },
+      { type: 'Vegetable', price: 22.95 },
+      { type: 'Chicken or Beef or Pork', price: 24.95 },
+      { type: 'Seafood', price: 26.95 },
     ],
     items: [
       {
-        number: 43,
+        number: 41,
         name: 'Fried Rice',
         description:
           'Superb Thai special fried rice with meat of your choice, vegetables, and egg.',
       },
+      // {
+      //   number: 42,
+      //   name: 'Kao Pad Prik',
+      //   description:
+      //     'Spicy fried rice with meat of your choice, egg, chili, vegetables, and basil.',
+      // },
       {
-        number: 44,
-        name: 'Kao Pad Prik',
-        description:
-          'Spicy fried rice with meat of your choice, egg, chili, vegetables, and basil.',
-      },
-      {
-        number: 45,
+        number: 42,
         name: 'Pad Thai',
         description:
           'Rice noodles stir-fried with chicken and prawns, egg, tofu, chili, bean sprouts, topped with crushed peanuts.',
       },
       {
-        number: 46,
+        number: 43,
         name: 'Pad Se-ew',
         description:
           'Fresh thick rice noodles stir-fried with sweet soy sauce, egg, and Chinese broccoli.',
       },
+      // {
+      //   number: 47,
+      //   name: 'Pad Kee Mao',
+      //   description:
+      //     'Thick rice noodles stir-fried with meat of your choice, egg, chili, basil, and vegetables.',
+      // },
       {
-        number: 47,
-        name: 'Pad Kee Mao',
+        number: 44,
+        name: 'Pad MaMa',
         description:
-          'Thick rice noodles stir-fried with meat of your choice, egg, chili, basil, and vegetables.',
+          'Stir-fried with meat of your choice with egg noodle soy sauce and vegetables.',
       },
       {
-        number: 48,
-        name: 'Pad Mee',
-        description:
-          'Stir-fried yellow egg noodles with meat of your choice in soy bean sauce and vegetables.',
-      },
-    ],
-  },
-  {
-    category: 'Sides & Add-Ons',
-    categoryNumber: 9,
-    priceHeaders: ['Small', 'Large'],
-    items: [
-      {
-        number: 49,
+        number: 45,
         name: 'Thai Jasmine Steam Rice',
         // prices: { small: 5.95, large: 6.95 },
-        price: 4.95,
-      },
-      {
-        number: 50,
-        name: 'Steam Coconut Rice',
-        // prices: { small: 6.95, large: 7.95 },
         price: 5.95,
       },
       {
-        number: 51,
-        name: 'Roti Bread',
-        price: 6.95, // Single price
+        number: 46,
+        name: 'Steam Coconut Rice',
+        // prices: { small: 6.95, large: 7.95 },
+        price: 6.95,
       },
       {
-        number: 52,
-        name: 'Prawn Crackers',
-        price: 6.95, // Single price
+        number: 47,
+        name: 'Roti Bread (served with Stay sauce)',
+        price: 7.95, // Single price
+      },
+      {
+        number: 48,
+        name: 'Prawn Crackers (served with Stay sauce)',
+        price: 7.95, // Single price
       },
     ],
   },
+  // {
+  //   category: 'Sides & Add-Ons',
+  //   categoryNumber: 9,
+  //   priceHeaders: ['Small', 'Large'],
+  //   items: [
+  //     {
+  //       number: 49,
+  //       name: 'Thai Jasmine Steam Rice',
+  //       // prices: { small: 5.95, large: 6.95 },
+  //       price: 4.95,
+  //     },
+  //     {
+  //       number: 50,
+  //       name: 'Steam Coconut Rice',
+  //       // prices: { small: 6.95, large: 7.95 },
+  //       price: 5.95,
+  //     },
+  //     {
+  //       number: 51,
+  //       name: 'Roti Bread',
+  //       price: 6.95, // Single price
+  //     },
+  //     {
+  //       number: 52,
+  //       name: 'Prawn Crackers',
+  //       price: 6.95, // Single price
+  //     },
+  //   ],
+  // },
   {
     category: 'Desserts',
     categoryNumber: 10, // Unique identifier for desserts
     items: [
       {
         name: 'Vanilla Ice Cream',
-        price: 10.95,
-      },
-      {
-        name: 'Coconut Ice Cream',
         price: 12.95,
       },
       {
-        name: 'Kao Neaw Dam',
+        name: 'Coconut Ice Cream',
         price: 14.95,
+      },
+      {
+        name: 'Kao Neaw Dam',
+        price: 16.95,
         description:
           'Black sticky rice flavored with coconut milk served with Thai custard',
       },
       {
         name: 'Kao Neaw Perk',
-        price: 14.95,
+        price: 16.95,
         description:
           'Thai-sweet sticky rice and taro served with coconut ice cream',
       },
       {
-        name: 'Banana Split',
-        price: 14.95,
-        description: 'Banana and ice cream topped with chocolate in season',
+        name: 'Apple pie fritter',
+        price: 16.95,
+        description: 'A crisp apple pie served with vanilla ice cream',
       },
       {
         name: 'Banana Fritter',
-        price: 14.95,
+        price: 16.95,
         description:
           'Banana in a crispy light batter deep-fried served with vanilla ice cream',
       },
       {
         name: 'Gua Boad Chee',
-        price: 14.95,
-      },
-      {
-        name: 'Fried Ice Cream',
         price: 16.95,
         description:
-          'New flavor coconut ice cream mixed with nuts, almond, macadamia, corn flakes, pistachio nuts',
+          'Original thai dessert banana in warm coconut milk',
       },
+      {
+        name: 'Boad Perk',
+        price: 16.95,
+        description: 'Original thai dessert taro in warm coconut milk',
+      }
+
     ],
   },
 ];
