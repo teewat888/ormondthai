@@ -21,7 +21,7 @@ export const dineInMenu = [
       {
         number: 3,
         name: 'Goong Hom Pa (5 pieces)',
-        price: 14.95,
+        price: 18.95,
         description:
           'King prawns marinated with special sauce wrapped in pastry and served with sweet chili dip.',
       },
