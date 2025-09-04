@@ -14,7 +14,7 @@ import { drinkMenuData } from './data/menuItems-drink';
    ===========================
    Toggle this to go live without password:
 */
-const GO_LIVE = false; // <-- set to true to disable password gate entirely
+const GO_LIVE = true; // <-- set to true to disable password gate entirely
 
 // Use EITHER a plain password OR a hash (leave the other empty)
 const PLAIN_PASSWORD = 'ormond1'; // easiest: set your password here
