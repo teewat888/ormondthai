@@ -173,12 +173,12 @@ function renderSite() {
     <div id="dine-in-menu" class="mx-4 md:mx-auto"></div>
   </div>
 </section>
-<!-- section id="food-drink-menu" class="py-20 bg-gray-900 text-gray-300">
+<section id="food-drink-menu" class="py-20 bg-gray-900 text-gray-300">
   <div class="container mx-auto">
     <h2 class="text-4xl font-bold text-gold text-center mb-12 ">Drink Menu</h2>
     <div id="drink-menu" class="mx-4 md:mx-auto"></div>
   </div>
-</section -->
+</section>
 <section id="food-takeaway-menu" class="py-20 bg-gray-900 text-gray-300">
   <div class="container mx-auto">
     <h2 class="text-4xl font-bold text-gold text-center mb-12 ">Takeaway Menu</h2>
